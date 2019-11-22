@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Logo from './Logo';
 import Search from './Search';
+import Account from './Account';
 
 class Header extends Component{
     render(){
@@ -8,7 +9,7 @@ class Header extends Component{
             <header className='header'>
                 <Logo/>
                 <Search/>
-                <div className='register$signin'></div>
+                <Account/>
             </header>
         )
     }

@@ -1,8 +1,9 @@
 @import './Logo.css';
 @import './Search.css';
-
+@import './Account.css';
 .header{
     padding: 1%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }

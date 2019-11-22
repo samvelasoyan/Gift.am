@@ -1,0 +1,21 @@
+.account{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.user,.cart{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.fa-user,.fa-shopping-cart{
+    color: #7e7e7efb;
+    font-size: 20px;
+}
+.user > span,.cart > span{
+    font-size: 15px;
+    font-weight: bold;
+    color: #7e7e7efb;
+}
