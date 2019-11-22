@@ -1,0 +1,14 @@
+.search{
+    width: 40%;
+}
+.search > form {
+    display: flex;
+}
+.searchInput{
+    width: 100%;
+    padding: 10px;
+}
+.searchButton{
+    width: 40px;
+    height: 40px;
+}

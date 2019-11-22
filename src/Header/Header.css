@@ -1,0 +1,8 @@
+@import './Logo.css';
+@import './Search.css';
+
+.header{
+    padding: 1%;
+    display: flex;
+    align-items: center;
+}
