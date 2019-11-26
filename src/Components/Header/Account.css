@@ -13,6 +13,10 @@
 .fa-user,.fa-shopping-cart{
     color: #7e7e7efb;
     font-size: 20px;
+    cursor: pointer;
+}
+.fa-user:hover{
+    color: #5c5c5cfb;
 }
 .user > span,.cart > span{
     font-size: 15px;

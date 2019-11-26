@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
 
 class Account extends Component{
+
     render(){
+
         return(
-            <div className='account'>
+            <div className='account' onClick={this.props.openLogin}>
                 <div className='user'>
                     <i className="fas fa-user"></i>
                     <span>Account</span>                    
