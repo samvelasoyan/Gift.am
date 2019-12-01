@@ -1,0 +1,26 @@
+@import './Logo.css';
+@import './Search.css';
+@import './Icon.css';
+
+.header{
+    padding: 0 5%;
+    background: linear-gradient(#F2D0A4, #f2d0a410);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header2{
+    padding: 0 5%;
+    background: linear-gradient(#F2D0A4, #F2D0A410);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    filter: blur(1.5px);
+}
+.account{
+    width: 12vw;
+    height: 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

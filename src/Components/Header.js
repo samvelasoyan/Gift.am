@@ -3,13 +3,15 @@ import Logo from './Logo';
 import Search from './Search';
 import Account from './Account';
 
+
 class Header extends Component{
     render(){
+        const isBlur = this.props.AccountMenuBool ? 'header2' : 'header'
         return(
-            <header className='header'>
+            <header className={isBlur}>
                 <Logo/>
                 <Search/>
-                <Account openLogin={this.props.openLogin}/>
+                <Account openAccountMenu={this.props.openAccountMenu}/>
             </header>
         )
     }

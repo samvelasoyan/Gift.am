@@ -1,0 +1,177 @@
+#template{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #F2D0A4;
+    overflow: hidden;
+    transition: 700ms;
+    animation: appear 700ms ease-in-out;
+}
+@keyframes appear{
+    0%{transform: translateY(-150%);}
+    100%{transform: translateY(0);}
+}
+#template>span:first-of-type{
+    position: absolute;
+    z-index: 999;
+    right: 2%;
+    top: 2%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 300ms;
+    cursor: pointer;
+}
+#template>span:first-of-type:hover{
+    background: linear-gradient(to right top, #717f815b, #F2D0A4);
+    color: #fff;
+}
+h1{
+    font-size: 2.5vw;
+}
+.form-container{
+    width: 100%;
+    transition: 300ms;
+    color: #595758;
+}
+.inputs{
+    margin: auto;
+    transform: translateX(-50%);
+    width: 40%;
+    transition: 700ms;
+}
+.input-container{
+    width: 100%;
+    margin-top: 3%;
+    padding: 3% 0;
+    background-color: #F6F7EB;
+    color: #595758;
+    transition: 300ms;
+    border-radius: 10px;
+    position: relative;
+}
+.input-container>input{
+    font-size: 1vw;
+    width: 80%;
+    padding-left: 4%;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+.input-container>.icon{
+    width: 5%;
+    padding: 0 3%;
+    font-size: 1.3vw;
+    display: inline-block;
+    color: #595758;
+}
+.input-container>.eye{
+    float: right;
+    margin-right: 5%;
+}
+.label{
+    z-index: 99;
+    position: absolute;
+    left: 10%;
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 1.2vw;
+    cursor: text;
+    transition: 100ms;
+}
+.upper{
+    transform: translateY(-40%);
+    font-size: 1vw;
+}
+.input-container>.error{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2vw;
+    color: #be0000;
+    width: auto;
+    opacity: 1;
+    transition: 100ms;
+}
+.input-container>input:focus~.error{
+    opacity: 0;
+}
+input[name='password']~.error,input[name='confirmPassword']~.error{
+    right: 10%;
+}
+.info-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.custom{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.custom>.input-container{
+    width: 100%;
+    margin-top: 0;
+    padding: 3% 0;
+}
+.custom .label{
+    left: 3%;
+}
+.file-container{
+    background-color: #F6F7EB;
+    transition: 200ms;
+    border-radius: 10px;
+    width: 17%;
+    padding-top: 3%; 
+    text-align: center;
+    cursor: pointer;
+}
+.file-container:hover{
+    background-color: #595758;
+    color: #F6F7EB;
+}
+.fileUpload{
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vw;
+}
+.fileUpload>p{
+    font-size: 1.2vw;
+    overflow: hidden;
+}
+.button-container{
+    width: 100%;
+    text-align: center; 
+    font-size: 1.2vw;
+}
+.red-button{
+    width: 100%;
+    padding: 3%;
+    border: 0;
+    border-radius: 5px;
+    background-color: transparent;
+    background: linear-gradient(to right top, #f6f7eb69, #B80C09);
+    color: white;
+    font-weight: bold;
+    margin-top: 2%;
+    cursor: pointer;
+    transition: 300ms;
+    outline: none;
+    font-size: 1.3vw;
+}
+.red-button:hover{
+    background-color: #B80C09;
+}
+a{
+    text-decoration: none;
+    color: #348496;
+    cursor: pointer;
+    font-weight: bold;
+}
+.far{
+    cursor: pointer;
+}
