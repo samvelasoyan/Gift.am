@@ -1,10 +1,10 @@
 const initState = {
-    body: [],
     edit: false,
-    signUp: true
+    signUp: true,
+    formBool: true,
 };
 
-const popUpReducer = (state = initState, action) => {
+const registrationReducer = (state = initState, action) => {
     switch (action.type) {
         case "EDIT":
             return { ...state, edit: action.payload };
@@ -12,9 +12,13 @@ const popUpReducer = (state = initState, action) => {
             return { ...state, signUp: action.payload};
         case "LOGIN":
             return { ...state, signUp: action.payload};
+        case "SIGNUP_FORM":
+            return { ...state, formBool: action.payload};
+        case "LOGIN_FORM":
+            return { ...state, formBool: action.payload};
         default:
             return state;
     }
 };
 
-export default popUpReducer;
+export default registrationReducer;

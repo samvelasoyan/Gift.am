@@ -3,7 +3,7 @@ import Input from "./Input";
 import { formValidation, emailRegex } from "./formValidation";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { logIn } from "../actions/index.js";
+import { signUp, hideSignUp } from "../actions/index.js";
 
 class SignUp extends Component {
     state = {
@@ -73,13 +73,18 @@ class SignUp extends Component {
 
     clickFileInput = () => this.fileInput.current.click();
 
+    logIn = () => {
+        this.props.hideSignUp()
+        setTimeout(()=>this.props.signUp(), 300)
+    }
+
     render() {
         const { form, formErrors } = this.state;
         return (
             <div className="inputs"  style={
-                this.props.data.signUp
-                    ? { transform: "translateY(0%)" }
-                    : { transform: "translateY(-120%)" }
+                !this.props.data.formBool
+                    ? { top: "0%" }
+                    : { top: "-100%" }
             }>
                 <form action="" onSubmit={this.handleSubmit} noValidate>
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
@@ -160,7 +165,7 @@ class SignUp extends Component {
                         >
                             Already have an account?
                         </p>
-                        <a href="#template" onClick={this.props.logIn}>
+                        <a href="#template" onClick={this.logIn}>
                             {" "}
                             Log In
                         </a>
@@ -176,6 +181,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ logIn }, dispatch);
+        return bindActionCreators({ signUp, hideSignUp }, dispatch);
     }
 )(SignUp);

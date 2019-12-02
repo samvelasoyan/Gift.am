@@ -7,7 +7,7 @@
     overflow: hidden;
     cursor: pointer;
 }
-.acc > .fa-user,.fa-heart,.fa-shopping-cart{
+.acc > i{
     width: 100%;
     height: 4vw; 
     position: absolute;
@@ -15,23 +15,22 @@
     top: 50%;
     transform: translateY(-50%);
     /* color: #7e7e7efb; */
-    color: #595758;
+    /* color: #595758; */
     /* color: #006685; */
     font-size: 22px;
     display: block;
     transition: 0.3s;
 }
-.acc > .fa-user{
+/* .acc > .fa-user{
     left: 0;
 }
 .fa-heart{
     left: 0;
-    /* color: rgb(240, 90, 103); */
     color: #B80C09;
 }
 .fa-shopping-cart{
     left: 0;
-}
+} */
 .acc > span{
     width: 100%;
     height: 4vw; 
@@ -40,17 +39,15 @@
     line-height: 4vw;
     font-size: 12px;
     font-weight: bold;
-    color: #595758;
-    /* color: #006685; */
+    /* color: #595758; */
+    color: inherit;
     display: block;
     z-index: 2;
     transition: 0.3s;
 }
-.wishList > span{
-    /* color: rgba(213,72,84,1); */
-    /* color: rgb(240, 90, 103); */
+/* .wishList > span{
     color: #B80C09;
-}
+} */
 .acc:hover{
     border: 1px solid rgba(4, 30, 66,0.6);
     border-radius: 4px;

@@ -1,7 +1,7 @@
-import popUpReducer from './reducer'
+import registrationReducer from './registrationReducer'
 
 const reducer = {
-    getData: popUpReducer,
+    getData: registrationReducer,
 }
 
 export default reducer

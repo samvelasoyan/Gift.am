@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { signUp } from "../actions/index.js";
+import { logIn, hideLogIn } from "../actions/index.js";
 
 
 class LogIn extends Component {
@@ -14,13 +14,17 @@ class LogIn extends Component {
         const {name, value} = e.target;
         this.setState({[name]: value})
     }
+    signUp = () => {
+        this.props.hideLogIn()
+        setTimeout(()=>this.props.logIn(), 100)
+    }
     render() {
         const {login, password} = this.state
         return (
             <div className="inputs" style={
-                this.props.data.signUp
-                    ? { transform: "translateY(100%)" }
-                    : { transform: "translateY(-190%)" }
+                !this.props.data.formBool
+                    ? { top: "-100%" }
+                    : { top: "0%" }
             }>
                 <form action="" >
                 <h1 style={{ fontWeight: "normal" }}>Log In</h1>
@@ -45,7 +49,7 @@ class LogIn extends Component {
                     <p style={{ textAlign: "center", display: "inline-block" }} className="footer">
                         Don't have an account?
                     </p>
-                    <a href="#template" onClick={this.props.signUp}>
+                    <a href="#template" onClick={this.signUp}>
                         {" "}
                         Sign Up
                     </a>
@@ -61,6 +65,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ signUp }, dispatch);
+        return bindActionCreators({ logIn, hideLogIn }, dispatch);
     }
 )(LogIn);

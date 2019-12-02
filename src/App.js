@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Header from './Components/Header';
 import AccountMenu from './Components/AccountMenu';
 import Registration from './Components/Registration'; 
+import SlideShow from './Components/SlideShow';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { popUpAction } from "./actions/index.js";
@@ -28,6 +29,7 @@ class App extends Component {
         {this.state.HeaderBool && <Header openAccountMenu={this.openAccountMenu} AccountMenuBool={this.state.AccountMenuBool}/>}
         {this.state.AccountMenuBool && <AccountMenu closeAccountMenu={this.closeAccountMenu} right={this.state.AccountMenuPositionRight}/>}
         {this.props.data.edit ? <Registration /> : null}
+        <SlideShow />
       </div>
     );
   }

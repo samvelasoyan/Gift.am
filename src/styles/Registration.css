@@ -36,10 +36,16 @@ h1{
     color: #595758;
 }
 .inputs{
-    margin: auto;
+    position: absolute;
+    left: 50%;
     transform: translateX(-50%);
     width: 40%;
-    transition: 700ms;
+    transition: 500ms;
+    animation: show 500ms ease-in-out;
+}
+@keyframes show{
+    0%{top: 100%}
+    100%{top: 0%;}
 }
 .input-container{
     width: 100%;

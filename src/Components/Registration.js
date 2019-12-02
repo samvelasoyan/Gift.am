@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Registration.css";
-import SignUp from './SignUp';
-import LogIn from './LogIn'
+import SignUp from "./SignUp";
+import LogIn from "./LogIn";
 // import Form from "./Form";
 // import Logo from "../images/mainLogo.PNG";
 import { connect } from "react-redux";
@@ -10,19 +10,19 @@ import { popUpAction } from "../actions/index.js";
 
 class Registration extends Component {
     state = {
-        signUp: false,
+        formBool: true,
         top: 0
     };
-    changeTemplate = () => {
-        this.setState({ signUp: !this.state.signUp });
+    hideForm = () => {
+        this.setState({ formBool: !this.state.formBool });
     };
     closeTemplate = () => {
-        this.setState({top: "-100%"})
-        setTimeout(()=>this.props.popUpAction(), 1000)
-    }
+        this.setState({ top: "-100%" });
+        setTimeout(() => this.props.popUpAction(), 1000);
+    };
     render() {
         return (
-            <div id="template" style={{top: [this.state.top]}}>
+            <div id="template" style={{ top: [this.state.top] }}>
                 <span onClick={this.closeTemplate}>
                     <i className="fas fa-times"></i>
                 </span>
@@ -34,8 +34,11 @@ class Registration extends Component {
                     }}
                 ></div> */}
                 <div className="form-container">
-                    <SignUp />
-                    <LogIn />
+                    {!this.props.data.signUp ? (
+                        <SignUp formBool={this.state.formBool} />
+                    ) : (
+                        <LogIn formBool={this.state.formBool} />
+                    )}
                 </div>
             </div>
         );

@@ -1,14 +1,15 @@
 import React,{Component,Fragment} from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { popUpAction, logIn, signUp } from "../actions/index.js";
+import { popUpAction, logIn, signUp, hideSignUp, hideLogIn } from "../actions/index.js";
 
 
 class AccountMenu extends Component{
 
 logIn = () => {
     this.props.closeAccountMenu()
-    this.props.logIn()
+    this.props.signUp()
+    this.props.hideSignUp()
     setTimeout(() => {
         this.props.popUpAction()
       }, 300);
@@ -16,7 +17,8 @@ logIn = () => {
 
 signUp = () => {
     this.props.closeAccountMenu()
-    this.props.signUp()
+    this.props.hideLogIn()
+    this.props.logIn()
     this.props.popUpAction()
 }
 
@@ -67,6 +69,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ popUpAction, logIn, signUp }, dispatch);
+        return bindActionCreators({ popUpAction, logIn, signUp, hideSignUp, hideLogIn }, dispatch);
     }
 )(AccountMenu);
