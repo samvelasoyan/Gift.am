@@ -1,30 +1,26 @@
 import React,{Component,Fragment} from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { popUpAction, logIn, signUp, hideSignUp, hideLogIn } from "../actions/index.js";
+import { popUpAction, enterLogInAction, enterSignUpAction, hideSignUpAction, hideLogInAction } from "../actions/index.js";
 
 
 class AccountMenu extends Component{
 
 logIn = () => {
     this.props.closeAccountMenu()
-    this.props.signUp()
-    this.props.hideSignUp()
-    setTimeout(() => {
-        this.props.popUpAction()
-      }, 300);
+    this.props.enterLogInAction()
+    this.props.hideLogInAction()
+    this.props.popUpAction()
 }
 
 signUp = () => {
     this.props.closeAccountMenu()
-    this.props.hideLogIn()
-    this.props.logIn()
+    this.props.enterSignUpAction()
+    this.props.hideSignUpAction()
     this.props.popUpAction()
 }
 
     render(){
-        // let right = `${this.props.right ? "0" : "-12%"}`
-        console.log(this.props.right)
         return(
             <Fragment>
             <div className='AccountMenuMain'></div>
@@ -69,6 +65,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ popUpAction, logIn, signUp, hideSignUp, hideLogIn }, dispatch);
+        return bindActionCreators({ popUpAction, enterLogInAction, enterSignUpAction, hideSignUpAction, hideLogInAction }, dispatch);
     }
 )(AccountMenu);

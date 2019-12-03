@@ -22,7 +22,7 @@ class Registration extends Component {
     };
     render() {
         return (
-            <div id="template" style={{ top: [this.state.top] }}>
+            <div id="template" style={{ top: `${this.state.top}` }}>
                 <span onClick={this.closeTemplate}>
                     <i className="fas fa-times"></i>
                 </span>
@@ -34,11 +34,8 @@ class Registration extends Component {
                     }}
                 ></div> */}
                 <div className="form-container">
-                    {!this.props.data.signUp ? (
-                        <SignUp formBool={this.state.formBool} />
-                    ) : (
-                        <LogIn formBool={this.state.formBool} />
-                    )}
+                    {this.props.data.signUp && <SignUp formBool={this.state.formBool} />}
+                    {this.props.data.logIn && <LogIn formBool={this.state.formBool} />}
                 </div>
             </div>
         );

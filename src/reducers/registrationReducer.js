@@ -1,6 +1,7 @@
 const initState = {
     edit: false,
-    signUp: true,
+    signUp: null,
+    logIn: null,
     formBool: true,
 };
 
@@ -11,10 +12,12 @@ const registrationReducer = (state = initState, action) => {
         case "SIGNUP":
             return { ...state, signUp: action.payload};
         case "LOGIN":
-            return { ...state, signUp: action.payload};
+            return { ...state, logIn: action.payload};
         case "SIGNUP_FORM":
             return { ...state, formBool: action.payload};
         case "LOGIN_FORM":
+            return { ...state, formBool: action.payload};
+        case "HIDE_FORM":
             return { ...state, formBool: action.payload};
         default:
             return state;

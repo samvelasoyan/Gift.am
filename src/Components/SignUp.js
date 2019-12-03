@@ -3,7 +3,7 @@ import Input from "./Input";
 import { formValidation, emailRegex } from "./formValidation";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { signUp, hideSignUp } from "../actions/index.js";
+import { logInAction, signUpAction, hideFormAction } from "../actions/index.js";
 
 class SignUp extends Component {
     state = {
@@ -74,18 +74,25 @@ class SignUp extends Component {
     clickFileInput = () => this.fileInput.current.click();
 
     logIn = () => {
-        this.props.hideSignUp()
-        setTimeout(()=>this.props.signUp(), 300)
-    }
+        this.props.logInAction()
+        console.log('logIn');
+        setTimeout(() => {
+            this.props.hideFormAction();
+            console.log('formBool')
+        }, 10);
+        setTimeout(() => {
+            this.props.signUpAction();
+            console.log('signUp')
+        }, 600);
+    };
 
     render() {
         const { form, formErrors } = this.state;
         return (
-            <div className="inputs"  style={
-                !this.props.data.formBool
-                    ? { top: "0%" }
-                    : { top: "-100%" }
-            }>
+            <div
+                className="signUp inputs"
+                style={this.props.data.formBool ? { top: "45%" } : { top: "-40%" }}
+            >
                 <form action="" onSubmit={this.handleSubmit} noValidate>
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
                     <div className="info-container">
@@ -158,7 +165,9 @@ class SignUp extends Component {
                         icon="fas fa-lock"
                     />
                     <div className="button-container">
-                        <button type="submit" className="red-button">Sign Up</button>
+                        <button type="submit" className="red-button">
+                            Sign Up
+                        </button>
                         <p
                             style={{ textAlign: "center", display: "inline-block" }}
                             className="footer"
@@ -181,6 +190,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ signUp, hideSignUp }, dispatch);
+        return bindActionCreators({ logInAction, signUpAction, hideFormAction }, dispatch);
     }
 )(SignUp);

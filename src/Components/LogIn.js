@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { logIn, hideLogIn } from "../actions/index.js";
+import { signUpAction, logInAction, hideFormAction } from "../actions/index.js";
 
 
 class LogIn extends Component {
@@ -15,17 +15,20 @@ class LogIn extends Component {
         this.setState({[name]: value})
     }
     signUp = () => {
-        this.props.hideLogIn()
-        setTimeout(()=>this.props.logIn(), 100)
+        this.props.signUpAction()
+        setTimeout(()=>this.props.hideFormAction(), 1)
+        setTimeout(()=>this.props.logInAction(), 600)
     }
     render() {
         const {login, password} = this.state
         return (
-            <div className="inputs" style={
-                !this.props.data.formBool
-                    ? { top: "-100%" }
-                    : { top: "0%" }
-            }>
+            <div className="logIn inputs" 
+            style={
+                this.props.data.formBool
+                    ? { top: "120%" }
+                    : { top: "45%" }
+            }
+            >
                 <form action="" >
                 <h1 style={{ fontWeight: "normal" }}>Log In</h1>
                 <Input
@@ -65,6 +68,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ logIn, hideLogIn }, dispatch);
+        return bindActionCreators({ signUpAction, logInAction, hideFormAction }, dispatch);
     }
 )(LogIn);
