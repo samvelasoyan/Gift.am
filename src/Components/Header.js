@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import Search from "./Search";
 import Menu from "./Menu";
 import Account from "./Account";
+import Background from '../images/IMG_14222.jpg'
 
 class Header extends Component {
     state = {
@@ -19,9 +20,8 @@ class Header extends Component {
         this.setState({ animation: !this.state.animation });
     };
     render() {
-        const isBlur = this.props.AccountMenuBool ? "header2" : "header";
         return (
-            <header className={isBlur}>
+            <header className='header' style={{background: `url(${Background}) no-repeat`, backgroundSize: '100% 100%', backgroundOrigin: 'border-box'}}>
                 <Logo />
                 {this.state.search ? (
                     <Search

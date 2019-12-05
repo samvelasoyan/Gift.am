@@ -1,28 +1,32 @@
-.slideShow{
+.slideShow {
     width: 100%;
-    background-color: #B80C09;
+    background-color: #d72638;
 }
-.slide{
-    padding: 4%;
+.slide {
+    padding: 8%;
     width: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.slide-logo{
+.slide-logo {
     width: 20%;
 }
-.slide-text{
-    padding: 10% 0;
-    width: 60%;
-    font-family: 'Open Sans', sans-serif;
-    color: #F2D0A4;
+.slide-text {
+    padding: 2% 0 18% 5%;
+    width: 45%;
+    font-family: "Open Sans", sans-serif;
+    color: #d72638;
     font-size: 2vw;
     line-height: 1;
-    /* text-align: right */
+    text-align: right;
+    /* font-weight: bold; */
 }
-.slide-text>h1{
-    font-family: 'Pacifico', cursive;
+.slide-text > h1 {
+    font-family: "Pacifico", cursive;
     font-size: 4vw;
     font-weight: normal;
+}
+.slide-text > p {
+    font-family: 'Josefin Sans', sans-serif;
 }

@@ -1,5 +1,5 @@
 const initState = {
-    edit: false,
+    template: false,
     signUp: null,
     logIn: null,
     formBool: true,
@@ -8,7 +8,7 @@ const initState = {
 const registrationReducer = (state = initState, action) => {
     switch (action.type) {
         case "EDIT":
-            return { ...state, edit: action.payload };
+            return { ...state, template: action.payload };
         case "SIGNUP":
             return { ...state, signUp: action.payload};
         case "LOGIN":

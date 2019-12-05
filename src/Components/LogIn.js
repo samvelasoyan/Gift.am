@@ -29,7 +29,7 @@ class LogIn extends Component {
                     : { top: "45%" }
             }
             >
-                <form action="" >
+                <form action="" noValidate>
                 <h1 style={{ fontWeight: "normal" }}>Log In</h1>
                 <Input
                     type="text"

@@ -6,32 +6,32 @@
 .header{
     padding: 0 5%;
     /* background: linear-gradient(#fff7ec, #fff7ec10); */
-    background-color: #fff7ec;
+    background-color: #ecfaff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
 }
-.header2{
+/* .header2{
     padding: 0 5%;
     background: linear-gradient(#f8debb, #F2D0A410);
     display: flex;
     align-items: center;
     justify-content: space-between;
     filter: blur(1.5px);
-}
+} */
 .account{
     width: 12vw;
     height: 4vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: #595758;
+    color: #041e42cc;
 }
 
 .account>.acc:nth-child(2){
-    color: #B80C09;
+    color: #D72638;
 }
 .account>.acc:nth-child(2):hover{
-    border: 1px solid #B80C09;;
+    border: 1px solid #D72638;;
 }

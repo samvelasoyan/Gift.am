@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import React, { useState } from "react";
 
 export default function Input({
     type,
@@ -11,29 +11,28 @@ export default function Input({
 }) {
     const [bool, setBool] = useState(false);
     const show = () => setBool(!bool);
-    const textInput = createRef()
-    const enterInput = () => textInput.current.click()
+    const error = formError !== "" && formError !== undefined 
     return (
-        <div className="input-container">
+        <div className={`input-container ${error && 'red'}`}>
             {icon && (
-                <span className='icon'>
+                <span className="icon">
                     <i className={icon}></i>
                 </span>
             )}
+            <label htmlFor={name} className={`label ${labelBool && "upper"}`}>
+                {placeholder}
+            </label>
             <input
                 type={type === "password" ? (bool ? "text" : "password") : type}
                 name={name}
+                id={name}
                 autoComplete="off"
                 noValidate
                 onChange={handleChange}
-                ref={textInput}
             />
-            <label onClick={enterInput} htmlFor={name} className={`label ${labelBool && "upper"}`}>
-                {placeholder}
-            </label>
-            {formError !== "" && <span className="error">{formError}</span>}
+            {error && <span className="error">{formError}</span>}
             {type === "password" && (
-                <span className='icon eye' onClick={() => show()}>
+                <span className="icon eye" onClick={() => show()}>
                     <i className={`far fa-eye${bool ? "" : "-slash"}`}></i>
                 </span>
             )}

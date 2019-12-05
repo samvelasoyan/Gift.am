@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from './Slide';
-import Background1 from '../images/background-1.JPEG'
+import Background1 from '../images/IMG_14223.jpg'
 
 export default function SlideShow(){
     return(

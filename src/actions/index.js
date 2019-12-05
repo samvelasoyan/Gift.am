@@ -1,6 +1,6 @@
 export const popUpAction = () => (dispatch, getState) => {
-    const edit = !getState().getData.edit
-    dispatch({type: 'EDIT', payload: edit})
+    const template = !getState().getData.template
+    dispatch({type: 'EDIT', payload: template})
 }
 
 export const enterSignUpAction = () => (dispatch) => {

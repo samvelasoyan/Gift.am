@@ -15,7 +15,7 @@
 .searchInput{
     width: 100%;
     padding: 12px;
-    border: 1.5px solid #595758;
+    border: 1.5px solid #041e42cc;
     /* border: 1.5px solid rgba(213,72,84,1); */
     /* border: 1.5px solid #006685; */
     border-right: none;
@@ -29,13 +29,13 @@
     height: 47px;
     padding: 0;
     border: none;
-    border: 1.5px solid #595758;
+    border: 1.5px solid #041e42cc;
     /* border: 1.5px solid rgba(213,72,84,1); */
     /* border: 1.5px solid #006685; */
     border-radius: 0 4px 4px 0;
     /* background-color: rgba(213,72,84,1); */
     background-color: white;
-    color: #B80C09;
+    color: #D72638;
     cursor: pointer;
     transition: 0.3s;
     outline: none;
@@ -47,7 +47,7 @@
     height: 100%;
     line-height: 3vw;
     color: white;
-    border: 1px solid #B80C09
+    border: 1px solid #D72638
 }
 /* .fa-search{
     width: 44px;
@@ -65,7 +65,7 @@
 }
 .searchButton:hover{
     /* background-color: rgb(213, 72, 84); */
-    background: #B80C09;
-    border: 1.5px solid #B80C09;
+    background: #D72638;
+    border: 1.5px solid #D72638;
     /* border: 1.5px solid rgba(213,72,84,1);    */
 }

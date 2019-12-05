@@ -1,7 +1,8 @@
 .menu{
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     /* font-family: 'Pacifico', cursive; */
-    color: #595758;
+    color: #041e42cc;
     width: 40%;
     margin: 0 auto;
     transform: translateY(0%);
@@ -20,7 +21,7 @@
     transition: 500ms;
 }
 .list>li:hover{
-    color: #B80C09;
+    color: #d72638;
 }
 .list>li>a{
     text-decoration: none;
