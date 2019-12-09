@@ -1,0 +1,21 @@
+.HeaderSearchDemo{
+    width: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+.HeaderSearchDemoButton{
+    padding: 0 11px;
+    border: transparent;
+    background: transparent;
+    outline: none;
+}
+.HeaderSearchDemoButton > .fa-search{
+    font-size: 18px;
+    color: #041e42cc;
+}
+.HeaderSearchDemoButton:hover {
+    cursor: pointer;
+}
+.HeaderSearchDemoButton:hover  .fa-search{
+    color: #e63042;
+}

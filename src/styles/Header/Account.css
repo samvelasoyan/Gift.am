@@ -1,0 +1,59 @@
+.ar{
+    position: relative;
+    left: 8%;
+}
+.account{
+    width: auto;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.acc{
+    padding: 2%;
+    margin-left: 3%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent
+}
+.acc > .fa-user,.fa-heart,.fa-shopping-cart{
+    color: #041e42cc;;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.acc > .fa-heart{
+    color: #e63042;
+}
+.acc > span{
+    font-size: 17px;
+    font-weight: bold;
+    color: #041e42cc;
+    transition: 0.3s;
+    display: none;
+
+}
+.wishList > span{
+    color: #e63042;
+}
+.acc:hover{
+    border: 1px solid #041e42cc;
+    border-radius: 4px;   
+    cursor: pointer;
+}
+.wishList:hover{
+    border: 1px solid #e63042;
+}
+.acc:hover i{
+    font-size: 0;
+}
+.acc:hover span{
+    display: block;
+    animation-name: spano;
+    animation-duration: 0.5s;
+}
+@keyframes spano{
+    from{font-size: 0;}
+    to{font-size: 17px;}
+}

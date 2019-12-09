@@ -1,0 +1,57 @@
+.cat-container{
+    width: 100%;
+    text-align: center;
+    padding: 2% 0;
+    color: #041e42ee;
+}
+.categories{
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cat-container>h1{
+    font-family: "Pacifico", cursive;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 3vw;
+}
+.box{
+    width: calc(100% / 3);
+    padding-bottom: calc(100% / 3);
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.box:hover .front{
+    opacity: 0;
+}
+.box:hover .back{
+    opacity: 1;
+}
+.front{
+    width: 100%;
+    padding-bottom: 100%;
+    position: absolute;
+    opacity: 1;
+    z-index: 9;
+    transition: 700ms;
+    filter: brightness(0.9);
+}
+.back{
+    width: 100%;
+    padding-bottom: 100%;
+    text-transform: uppercase;
+    position: absolute;
+    opacity: 0;
+    transition: 700ms;
+    background-color: transparent;
+}
+.back>span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2vw;
+    color: #041e42;
+}

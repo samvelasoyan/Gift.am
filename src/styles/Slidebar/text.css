@@ -1,0 +1,18 @@
+.slide-text {
+    padding: 2% 3% 18% 5%;
+    width: 45%;
+    font-family: "Open Sans", sans-serif;
+    color: #d72638;
+    font-size: 2vw;
+    line-height: 1;
+    text-align: right;
+    float: right;
+}
+.slide-text > h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 4vw;
+    font-weight: normal;
+}
+.slide-text > p {
+    font-family: 'Josefin Sans', sans-serif;
+}

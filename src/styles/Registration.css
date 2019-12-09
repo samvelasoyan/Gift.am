@@ -2,44 +2,93 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: #F2D0A4;
+    background: #fcf3f3;
     overflow: hidden;
     transition: 700ms;
     animation: appear 700ms ease-in-out;
+    z-index: 900;
 }
 @keyframes appear{
     0%{transform: translateY(-150%);}
     100%{transform: translateY(0);}
 }
-#template>span:first-of-type{
+.pic-container>span:first-of-type{
     position: absolute;
     z-index: 999;
-    left: 2%;
+    right: 5%;
     top: 2%;
-    width: 7%;
-    height: 15%;
+    /* transform: translate(-50%, -50%); */
+    width: 20%;
+    height: 20%;
     text-align: center;
-    border-radius: 5px;
-    transition: 300ms;
+    /* border-radius: 5px; */
+    /* transition: 500ms; */
     cursor: pointer;
+    /* filter: brightness(10); */
 }
-#template>span:first-of-type:hover{
-    background: linear-gradient(to right top, #717f815b, #F2D0A4);
-    color: #fff;
+.pic-container{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: 500ms;
+    transform: translateX(0);
+    z-index: 99;
 }
-h1{
+.first{
+    background: url(/login\ form/images/image-4.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.second{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0.1;
+    background-color: #041e42ee;
+    transition: 500ms
+}
+.pic-container:hover .second{
+    opacity: 0.2; 
+}
+.third{
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    padding: 30% 0;
+    transition: 500ms;
+}
+.third>.slide-text{
+    width: 100%;
+    text-align: center;
+}
+.form-container h1{
     font-size: 2vw;
 }
 .form-container{
-    width: 100%;
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 100%;
     transition: 300ms;
-    color: #041e42dd;
+    color: #041e42ee;
+    /* filter: brightness(1.1); */
 }
 .inputs{
     position: absolute;
-    left: 50%;
+    top: 50%;
+    /* left: 50%; */
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 55%;
     transition:  600ms;
     /* animation: show 500ms ease-in-out; */
 }
@@ -49,14 +98,15 @@ h1{
 }
 .input-container{
     width: 100%;
-    margin-top: 2%;
-    padding: 3% 0;
+    margin-top: 3%;
+    padding: 3.5% 0 ;
     background-color: #F6F7EB;
     border: 1px solid #b2b2b2;
-    color: #041e42dd;
+    color: #041e42ee;
     transition: 300ms;
     border-radius: 10px;
     position: relative;
+    display: inline-block;
 }
 .input-container>input{
     font-size: 1vw;
@@ -71,7 +121,7 @@ h1{
     padding: 0 3%;
     font-size: 1vw;
     display: inline-block;
-    color: #041e42dd;
+    color: #041e42ee;
 }
 .input-container>.eye{
     float: right;
@@ -88,8 +138,8 @@ h1{
     transition: 100ms;
 }
 .upper{
-    transform: translateY(-60%);
-    font-size: 0.8vw;
+    transform: translateY(-100%);
+    font-size: 0.65vw;
 }
 .input-container>.error{
     position: absolute;
@@ -163,7 +213,7 @@ input[name='password']~.error,input[name='confirmPassword']~.error{
     border: 0;
     border-radius: 5px;
     background-color: transparent;
-    background: #041e42cc;
+    background: #e63042cc;
     color: white;
     font-weight: bold;
     margin-top: 2%;
@@ -173,11 +223,11 @@ input[name='password']~.error,input[name='confirmPassword']~.error{
     font-size: 1vw;
 }
 .red-button:hover{
-    background-color: #041e42ee;
+    background-color: #e63042;
 }
 a{
     text-decoration: none;
-    color: #d72638;
+    color: #041e42ee;
     cursor: pointer;
     font-weight: bold;
 }

@@ -1,0 +1,18 @@
+@import './MainMenuAndSearch/MainMenuAndSearch.css';
+@import './Logo.css';
+@import './Account.css';
+
+.header{    
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgba(234, 237, 237,0.5); */
+    /* background: linear-gradient(to right,#ACB7B9 0%,#EBEFF0 26%,#EBEFF0 84%,#CAD0D0 100%); */
+    background: url(../../images/IMG_14222.jpg);
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.header > div{
+    width: calc(100% / 3);
+}

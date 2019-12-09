@@ -1,7 +1,8 @@
-@import './styles/Header.css';
-@import './styles/AccountMenu.css';
-@import './styles//SlideShow.css';
+@import './styles/Header/Header.css';
+@import './styles/AccountMenuRight/AccountMenu.css';
+@import './styles/Slidebar/slidebar.css';
+@import './styles/Categories.css';
 
-.blur{
-    filter: blur(1.5px);
+.blured{
+    filter: blur(2px);
 }

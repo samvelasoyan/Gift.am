@@ -25,8 +25,8 @@ class LogIn extends Component {
             <div className="logIn inputs" 
             style={
                 this.props.data.formBool
-                    ? { top: "120%" }
-                    : { top: "45%" }
+                    ? { left: "-50%" }
+                    : { left: "50%" }
             }
             >
                 <form action="" noValidate>

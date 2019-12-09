@@ -12,6 +12,7 @@ export default function Input({
     const [bool, setBool] = useState(false);
     const show = () => setBool(!bool);
     const error = formError !== "" && formError !== undefined 
+    console.log(icon)
     return (
         <div className={`input-container ${error && 'red'}`}>
             {icon && (
@@ -19,7 +20,7 @@ export default function Input({
                     <i className={icon}></i>
                 </span>
             )}
-            <label htmlFor={name} className={`label ${labelBool && "upper"}`}>
+            <label htmlFor={name} className={`label ${labelBool && "upper"}`} style={icon === undefined ? {left: '4%'} : {left: '10%'}}>
                 {placeholder}
             </label>
             <input

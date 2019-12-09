@@ -1,0 +1,47 @@
+.HeaderSearch{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+}
+.HeaderSearch > form{
+    width: 100%;
+    border: 1px solid #041e42cc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    animation-name: HeaderSearchForm;
+    animation-duration: 0.9s;
+}
+@keyframes HeaderSearchForm{
+    from{width: 40px;};
+    to{width: 100%}
+}
+.HeaderSearchInput{
+    width: calc(100% - 40px);
+    padding: 0 0 0 2%;
+    border: transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+}
+.HeaderSearchButton{
+    width: 40px;
+    height: 40px;
+    padding: 0 11px;
+    border: transparent;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+}
+.HeaderSearchButton > .fa-search{
+    border: transparent;
+    font-size: 18px;
+    color: #041e42cc;
+}
+.HeaderSearchButton:hover {
+    cursor: pointer;
+}
+.HeaderSearchButton:hover  .fa-search{
+    color: #e63042;
+}

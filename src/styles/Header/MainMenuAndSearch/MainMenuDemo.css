@@ -1,0 +1,15 @@
+.MainMenuDemo{
+    width: 20%;
+}
+.MainMenuDemo > div{
+    margin-right: 18px;
+    font-size: 18px;
+    color: #041e42cc;
+    transition: 0.3s;
+    font-weight: bold;
+    display: none;
+}
+.MainMenuDemo > div:hover{
+    color: #e63042;
+    cursor: pointer;
+}

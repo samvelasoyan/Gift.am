@@ -1,0 +1,18 @@
+.MenuUL{
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+}
+.mainMenuList{
+    list-style-type: none;
+    margin: 0 20px 0 0;
+}
+.mainMenuList > a{
+    word-break: normal;
+    font-size: 19px;
+    color: #041e42cc;
+    transition: 0.3s;
+}
+.mainMenuList > a:hover{
+    color: #e63042;
+}

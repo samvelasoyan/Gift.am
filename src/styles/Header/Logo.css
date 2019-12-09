@@ -1,0 +1,9 @@
+.logo{
+    /* width: 200px; */
+    margin-left: 2%;
+}
+.logo > img{
+    width: 100px;
+    height:100px;
+    cursor: pointer;
+}

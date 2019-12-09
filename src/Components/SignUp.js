@@ -91,11 +91,11 @@ class SignUp extends Component {
         return (
             <div
                 className="signUp inputs"
-                style={this.props.data.formBool ? { top: "45%" } : { top: "-40%" }}
+                style={this.props.data.formBool ? { left: "50%" } : { left: "150%" }}
             >
                 <form action="" onSubmit={this.handleSubmit} noValidate>
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
-                    <div className="info-container">
+                    {/* <div className="info-container">
                         <div className="file-container" onClick={this.clickFileInput}>
                             <div className="fileUpload">
                                 <i className="fas fa-user-secret"></i>
@@ -108,8 +108,8 @@ class SignUp extends Component {
                                 onChange={this.changeValue}
                                 hidden
                             />
-                        </div>
-                        <div className="custom">
+                        </div> */}
+                        {/* <div className="custom"> */}
                             <Input
                                 type="text"
                                 name="firstName"
@@ -126,8 +126,8 @@ class SignUp extends Component {
                                 labelBool={form.lastName !== null && form.lastName !== ""}
                                 formError={formErrors.lastName}
                             />
-                        </div>
-                    </div>
+                        {/* </div> */}
+                    {/* </div> */}
                     <Input
                         type="text"
                         name="username"

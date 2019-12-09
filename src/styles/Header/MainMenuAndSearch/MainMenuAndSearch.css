@@ -1,0 +1,9 @@
+@import './MainMenu.css';
+@import './MainMenuDemo.css';
+@import './HeaderSearchDemo.css';
+@import './HeaderSearch.css';
+
+.MainMenuAndSearch{
+    display: flex;
+    align-items: center;
+}
