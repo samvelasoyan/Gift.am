@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Box({ background, text }) {
     return (
         <div className="box">
-            <div
-                className="front"
-                style={{ background: `url(${background}) no-repeat`, backgroundSize: "cover" }}
-            ></div>
-            <div className="back">
-                <span>{text}</span>
-            </div>
+            <Link to={`/categories/${text}`}>
+                <div
+                    className="front"
+                    style={{ background: `url(${background}) no-repeat`, backgroundSize: "cover" }}
+                ></div>
+                <div className="back">
+                    <span>{text}</span>
+                </div>
+            </Link>
         </div>
     );
 }

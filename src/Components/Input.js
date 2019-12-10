@@ -12,7 +12,6 @@ export default function Input({
     const [bool, setBool] = useState(false);
     const show = () => setBool(!bool);
     const error = formError !== "" && formError !== undefined 
-    console.log(icon)
     return (
         <div className={`input-container ${error && 'red'}`}>
             {icon && (

@@ -8,7 +8,7 @@ import watchesBG from "../images/categories/watches1.jpg";
 import perfumeBG from "../images/categories/perfume.jpg";
 import teddybearBG from "../images/categories/teddybear.jpg";
 import balloonsBG from "../images/categories/balloons1.jpg";
-import cakeBG from "../images/categories/cakes.jpg";
+import cakeBG from "../images/categories/cake1.jpg";
 import basketBG from "../images/categories/basket2.jpg";
 
 export default function Categories() {

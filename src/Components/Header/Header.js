@@ -7,7 +7,7 @@ import MainMenuAndSearch from './MainMenuAndSearch/MainMenuAndSearch';
 class Header extends Component{
     render(){
         return(
-            <header className='header'>
+            <header className='header' id='home'>
                 <Logo/>
                 <MainMenuAndSearch/>
                 <Account openAccountMenu={this.props.openAccountMenu}/>

@@ -7,3 +7,9 @@
     height:100px;
     cursor: pointer;
 }
+
+.logo>a{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}

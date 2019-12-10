@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import axios from 'axios';
 import Input from "./Input";
 import { formValidation, emailRegex } from "./formValidation";
 import { connect } from "react-redux";
@@ -30,8 +31,10 @@ class SignUp extends Component {
         e.preventDefault();
 
         formValidation(this.state)
-            ? console.log("SUBMITTING")
-            : console.error("ERROR FORM INVALID");
+            ? axios
+                  .post("http://192.168.5.69:8003/api/Users/Register", this.state.form)
+                  .then((res) => console.log(res.data))
+            : console.log("FORM NO VALID");
     };
 
     handleChange = (e) => {
@@ -74,15 +77,15 @@ class SignUp extends Component {
     clickFileInput = () => this.fileInput.current.click();
 
     logIn = () => {
-        this.props.logInAction()
-        console.log('logIn');
+        this.props.logInAction();
+        console.log("logIn");
         setTimeout(() => {
             this.props.hideFormAction();
-            console.log('formBool')
+            console.log("formBool");
         }, 10);
         setTimeout(() => {
             this.props.signUpAction();
-            console.log('signUp')
+            console.log("signUp");
         }, 600);
     };
 
@@ -109,24 +112,24 @@ class SignUp extends Component {
                                 hidden
                             />
                         </div> */}
-                        {/* <div className="custom"> */}
-                            <Input
-                                type="text"
-                                name="firstName"
-                                placeholder="First Name"
-                                handleChange={this.handleChange}
-                                labelBool={form.firstName !== null && form.firstName !== ""}
-                                formError={formErrors.firstName}
-                            />
-                            <Input
-                                type="text"
-                                name="lastName"
-                                placeholder="Last Name"
-                                handleChange={this.handleChange}
-                                labelBool={form.lastName !== null && form.lastName !== ""}
-                                formError={formErrors.lastName}
-                            />
-                        {/* </div> */}
+                    {/* <div className="custom"> */}
+                    <Input
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name"
+                        handleChange={this.handleChange}
+                        labelBool={form.firstName !== null && form.firstName !== ""}
+                        formError={formErrors.firstName}
+                    />
+                    <Input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name"
+                        handleChange={this.handleChange}
+                        labelBool={form.lastName !== null && form.lastName !== ""}
+                        formError={formErrors.lastName}
+                    />
+                    {/* </div> */}
                     {/* </div> */}
                     <Input
                         type="text"
@@ -168,10 +171,7 @@ class SignUp extends Component {
                         <button type="submit" className="red-button">
                             Sign Up
                         </button>
-                        <p
-                            style={{ textAlign: "center", display: "inline-block" }}
-                            className="footer"
-                        >
+                        <p style={{ textAlign: "center", display: "inline-block" }}>
                             Already have an account?
                         </p>
                         <a href="#template" onClick={this.logIn}>

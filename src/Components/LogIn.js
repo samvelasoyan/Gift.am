@@ -49,7 +49,7 @@ class LogIn extends Component {
                 />
                 <div className="button-container">
                     <button type="submit" className='red-button'>Log In</button>
-                    <p style={{ textAlign: "center", display: "inline-block" }} className="footer">
+                    <p style={{ textAlign: "center", display: "inline-block" }}>
                         Don't have an account?
                     </p>
                     <a href="#template" onClick={this.signUp}>

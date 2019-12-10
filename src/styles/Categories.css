@@ -1,12 +1,11 @@
 .cat-container{
     width: 100%;
     text-align: center;
-    padding: 2% 0;
+    padding-top: 2%;
     color: #041e42ee;
 }
 .categories{
     width: 100%;
-    font-family: "Pacifico", cursive;
     display: flex;
     flex-wrap: wrap;
 }
