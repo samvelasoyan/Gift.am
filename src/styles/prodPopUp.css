@@ -1,0 +1,46 @@
+.product-pop-up{
+    position: absolute;
+    width: 70%;
+    padding: 1%;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #999999;
+    animation: popUp 700ms ease-in-out;
+}
+@keyframes popUp{
+    0%{top: -50%}
+    100%{top: 50%}
+}
+.prod-popup-image{
+    width: 35%;
+    padding-bottom: 40%;
+}
+.prod-popup-description{
+    width: 65%;
+    padding: 10% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    color: #041e42;
+}
+.prod-popup-description>p{
+    font-size: 1vw;
+}
+.close{
+    cursor: pointer;
+}
+.buttons{
+    width: 50%;
+    padding: 3% 0;
+    display: flex;
+    text-align: left;
+    /* justify-content: space-evenly; */
+}
+.buttons>.to-cart, .buttons>.to-wishlist{
+    width: 20%;
+    cursor: pointer;
+    border-bottom: 1px solid;
+}

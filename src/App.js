@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
-import Perfume from "./Perfume";
+import Category from "./Category";
 // import Header from './Components/Header/Header';
 // import Slidebar from './Components/Slidebar/slidebar';
 // import AccountMenu from './Components/AccountMenuRight/AccountMenu';
@@ -66,11 +66,11 @@ import Perfume from "./Perfume";
 class App extends Component {
     render() {
         return (
-            <div>
+            <div className='page'>
                 <Router>
                   <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/categories/perfume" component={Perfume} />
+                    <Route path="/categories/perfume" component={Category} />
                   </Switch>
                 </Router>
             </div>
