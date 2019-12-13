@@ -1,0 +1,70 @@
+@import './MobileMainMenu.css';
+@import './CategoriesMenu.css';
+
+.MobileMenuMain{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.3);
+    opacity: 0.2;
+}
+.MobileMenu{
+    width: 50%;
+    height: 100%;
+    padding: 2%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background: white;
+    opacity: 1;
+    animation-name: MobileMenu;
+    animation-duration: 0.3s;
+    transition: 0.3s;
+}
+@keyframes MobileMenu{
+    from{right:-50%}
+    to{right: 0;}
+}
+
+/* MobileMenuContent styles */
+
+.MobileMenuContent{
+    display: flex;
+    flex-direction: column;
+}
+.MobileHeader{
+    margin: 10px 10px 30px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.MobileName{
+    display: flex;
+    align-items: center;
+}
+.MobileNameSite{
+    font-size: 25px;
+    color:rgba(4, 30, 66,0.8);
+    font-family: "Pacifico", cursive;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.MobileNameSite:hover{
+    color: #e63042;
+}
+.MobileClose{
+    display: flex;
+    align-items: center;
+}
+.MobileClose > .fa-times{
+    line-height: 30px;
+    color:rgba(4, 30, 66,0.8);
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.MobileClose > .fa-times:hover{
+    color: #e63042;
+}

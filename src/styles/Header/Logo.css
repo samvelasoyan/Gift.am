@@ -1,15 +1,23 @@
 .logo{
+    /* width: 20%; */
     /* width: 200px; */
     margin-left: 2%;
 }
+.logo>a{
+    width: 7.32vw;
+    height: 7.32vw;
+    position: absolute;
+}
 .logo > img{
-    width: 100px;
-    height:100px;
+    /* width: 100px; */
+    /* height:100px; */
+    width: 7.32vw;
+    height: 7.32vw;
     cursor: pointer;
 }
-
-.logo>a{
-    width: 100px;
-    height: 100px;
-    position: absolute;
+@media only screen and (max-width: 719px){
+    .logo > img{
+        width: 20vw;
+        height: 20vw;
+    }
 }

@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { setCategoryAction } from "../actions/index";
 
-export default function Box({ background, text }) {
+function Box({ background, text, setCategoryAction }) {
     return (
-        <div className="box">
-            <Link to={`/categories/${text}/#home`}>
+        <div className="box" onClick={()=>setCategoryAction(text)}>
+            <Link to={`/categories/${text}`}>
                 <div
                     className="front"
                     style={{ background: `url(${background}) no-repeat`, backgroundSize: "cover" }}
@@ -16,3 +19,12 @@ export default function Box({ background, text }) {
         </div>
     );
 }
+
+export default connect(
+    (state) => {
+        return { categories: state.categories };
+    },
+    (dispatch) => {
+        return bindActionCreators({ setCategoryAction }, dispatch);
+    }
+)(Box);

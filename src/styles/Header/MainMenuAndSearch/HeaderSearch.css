@@ -6,7 +6,9 @@
 .HeaderSearch > form{
     width: 100%;
     border: 1px solid #041e42cc;
-    border-radius: 4px;
+    /* border: 0.0732vw solid #041e42cc; */
+    /* border-radius: 4px; */
+    border-radius: 0.2928vw;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -14,29 +16,38 @@
     animation-duration: 0.9s;
 }
 @keyframes HeaderSearchForm{
-    from{width: 40px;};
+    /* from{width: 40px} */
+    from{width: 2.928vw}
     to{width: 100%}
 }
 .HeaderSearchInput{
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: calc(100% - 2.928vw);
     padding: 0 0 0 2%;
     border: transparent;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    /* border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; */
+    border-top-left-radius: 0.2928vw;
+    border-bottom-left-radius: 0.2928vw;
     outline: none;
 }
 .HeaderSearchButton{
-    width: 40px;
-    height: 40px;
-    padding: 0 11px;
+    /* width: 40px; */
+    /* height: 40px; */
+    width: 2.928vw;
+    height: 2.928vw;
+    /* padding: 0 11px; */
+    padding: 0 0.8vw;
     border: transparent;
-    border-radius: 4px;
+    /* border-radius: 4px; */
+    border-radius: 0.2928vw;
     background: transparent;
     outline: none;
 }
 .HeaderSearchButton > .fa-search{
     border: transparent;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 1.3177vw;
     color: #041e42cc;
 }
 .HeaderSearchButton:hover {
@@ -44,4 +55,46 @@
 }
 .HeaderSearchButton:hover  .fa-search{
     color: #e63042;
+}
+@media only screen and (max-width: 719px){
+    .HeaderSearch > form{
+        /* border: 1px solid #041e42cc; */
+        border: calc(2 * 0.0732vw) solid #041e42cc;
+        /* border-radius: 4px; */
+        border-radius: calc(2 * 0.2928vw);
+    }
+    @keyframes HeaderSearchForm{
+        /* from{width: 40px} */
+        from{width: calc(2 * 2.928vw)}
+        to{width: 100%}
+    }
+    .HeaderSearchInput{
+        /* width: calc(100% - 40px); */
+        width: calc(100% - 2.928vw);
+        padding: 0 0 0 2%;
+        border: transparent;
+        /* border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px; */
+        border-top-left-radius: 0.2928vw;
+        border-bottom-left-radius: 0.2928vw;
+    }
+    .HeaderSearchButton{
+        /* width: 40px; */
+        /* height: 40px; */
+        width: 2.928vw;
+        height: 2.928vw;
+        /* padding: 0 11px; */
+        padding: 0 0.8vw;
+        border: transparent;
+        /* border-radius: 4px; */
+        border-radius: 0.2928vw;
+        background: transparent;
+        outline: none;
+    }
+    .HeaderSearchButton > .fa-search{
+        border: transparent;
+        /* font-size: 18px; */
+        font-size: 1.3177vw;
+        color: #041e42cc;
+    }
 }

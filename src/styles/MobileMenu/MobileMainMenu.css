@@ -1,0 +1,24 @@
+.MobileMainMenu{
+    width: 100%;
+}
+.MobileMenuUL{
+    padding: 0;
+    margin: 0 0 0 10px;
+}
+.MobileMenuList{
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+.MobileMenuList > a,span{
+    font-size: 20px;
+    font-weight: bold;
+    color:rgba(4, 30, 66,0.8);
+    transition: 0.2s;
+}
+.MobileMenuList:hover > a{
+    color: #e63042;
+}
+.MobileMenuList:hover > span{
+    color: #e63042;
+    cursor: pointer;
+}

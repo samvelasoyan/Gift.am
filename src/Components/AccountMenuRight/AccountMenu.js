@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { popUpAction, enterLogInAction, enterSignUpAction, hideSignUpAction, hideLogInAction } from "../../actions/index.js";
 
 class AccountMenu extends Component{
+    
     logIn = () => {
         this.props.closeAccountMenu()
         this.props.enterLogInAction()
@@ -18,7 +19,6 @@ class AccountMenu extends Component{
         this.props.popUpAction()
     }
     render(){
-        // let right = `${this.props.right ? "0" : "-12%"}`
         return(
             <Fragment>
             <div className='AccountMenuMain'></div>

@@ -1,0 +1,43 @@
+.CategoriesMainMenu{
+    width: 100%;
+}
+.MobileBackMenu{
+    padding: 0;
+    margin: 0 0 20px 10px;
+    cursor: pointer;
+}
+.MobileBackMenu:hover > i,span{
+    color: #e63042;
+}
+.MobileBackMenu:hover > span{
+    color: #e63042;
+}
+.MobileBackMenu > i{
+    font-size: 14px;
+    margin-right: 10px;
+}
+.MobileBackMenu > i,span{
+    transition: 0.2s;
+    color:#041e42ee;
+}
+.MobileBackMenu > span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.CategoiesMenuUL{
+    padding: 0;
+    margin: 0 0 0 30px;
+}
+.CategoiesMenuUL > li{
+    list-style-type: none;
+    margin-bottom: 30px;
+}
+.CategoriesMenuList > a{
+    font-size: 18px;
+    font-weight: bold;
+    color:rgba(4, 30, 66,0.8);
+    transition: 0.2s;
+}
+.CategoriesMenuList:hover > a{
+    color: #e63042;
+}

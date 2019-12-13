@@ -2,8 +2,10 @@
     width: 20%;
 }
 .MainMenuDemo > div{
-    margin-right: 18px;
-    font-size: 18px;
+    /* margin-right: 18px; */
+    margin-right: 1.3177vw;
+    /* font-size: 18px; */
+    font-size: 1.3177vw;
     color: #041e42cc;
     transition: 0.3s;
     font-weight: bold;
@@ -13,3 +15,4 @@
     color: #e63042;
     cursor: pointer;
 }
+

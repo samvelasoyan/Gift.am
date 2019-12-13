@@ -1,15 +1,19 @@
 .MenuUL{
-    width: calc(100% - 40px);
+    /* width: calc(100% - 40px); */
+    width: calc(100% - 2.928vw);
+    padding: 0;
     display: flex;
     justify-content: center;
 }
 .mainMenuList{
     list-style-type: none;
-    margin: 0 20px 0 0;
+    /* margin: 0 20px 0 0; */
+    margin: 0 1.464vw 0 0; 
 }
 .mainMenuList > a{
-    word-break: normal;
-    font-size: 19px;
+    white-space: nowrap;
+    /* font-size: 19px; */
+    font-size: 1.39vw;
     color: #041e42cc;
     transition: 0.3s;
 }

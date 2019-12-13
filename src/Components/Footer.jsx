@@ -1,6 +1,5 @@
 import React from "react";
 import background from "../images/IMG_14224.jpg";
-import toTop from '../images/to-top.png' 
 
 export default function Footer() {
     return (

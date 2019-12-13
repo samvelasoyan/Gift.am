@@ -1,0 +1,14 @@
+
+.MobileHeaderH > div{
+    width: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.MobileHeaderH > .logo{
+    width: 20%;
+}
+.MobileH > .fas{
+    font-size: 4vw;
+    color: #041e42cc;
+}

@@ -5,3 +5,6 @@ export const SIGNUP_FORM = "SIGNUP_FORM";
 export const LOGIN_FORM = "LOGIN_FORM";
 export const HIDE_FORM = "HIDE_FORM";
 export const DESCRIPTION = "DESCRIPTION";
+export const CATEGORY = "SET_CATEGORY";
+export const TOCART = "TO_CART";
+export const TOLIST = "TO_LIST";

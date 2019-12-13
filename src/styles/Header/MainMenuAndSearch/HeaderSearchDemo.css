@@ -1,16 +1,21 @@
 .HeaderSearchDemo{
-    width: 40px;
+    /* width: 40px; */
+    width: 2.928vw;
+    border: 1px solid transparent;
+    /* border: 0.0732vw solid transparent; */
     display: flex;
     justify-content: flex-end;
 }
 .HeaderSearchDemoButton{
-    padding: 0 11px;
+    /* padding: 0 11px; */
+    padding: 0 0.8vw;
     border: transparent;
     background: transparent;
     outline: none;
 }
 .HeaderSearchDemoButton > .fa-search{
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 1.3177vw;
     color: #041e42cc;
 }
 .HeaderSearchDemoButton:hover {

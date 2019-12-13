@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import axios from 'axios';
 import Input from "./Input";
 import { formValidation, emailRegex } from "./formValidation";
@@ -8,7 +8,6 @@ import { logInAction, signUpAction, hideFormAction } from "../actions/index.js";
 
 class SignUp extends Component {
     state = {
-        value: "",
         form: {
             firstName: null,
             lastName: null,
@@ -68,14 +67,6 @@ class SignUp extends Component {
         this.setState({ form, formErrors });
     };
 
-    fileInput = createRef();
-
-    changeValue = () => {
-        this.setState({ value: this.fileInput.current.value });
-    };
-
-    clickFileInput = () => this.fileInput.current.click();
-
     logIn = () => {
         this.props.logInAction();
         console.log("logIn");
@@ -98,21 +89,6 @@ class SignUp extends Component {
             >
                 <form action="" onSubmit={this.handleSubmit} noValidate>
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
-                    {/* <div className="info-container">
-                        <div className="file-container" onClick={this.clickFileInput}>
-                            <div className="fileUpload">
-                                <i className="fas fa-user-secret"></i>
-                                <p>{this.state.value === "" ? "Avatar" : this.state.value}</p>
-                            </div>
-                            <input
-                                type="file"
-                                ref={this.fileInput}
-                                value={this.state.value}
-                                onChange={this.changeValue}
-                                hidden
-                            />
-                        </div> */}
-                    {/* <div className="custom"> */}
                     <Input
                         type="text"
                         name="firstName"
@@ -129,8 +105,6 @@ class SignUp extends Component {
                         labelBool={form.lastName !== null && form.lastName !== ""}
                         formError={formErrors.lastName}
                     />
-                    {/* </div> */}
-                    {/* </div> */}
                     <Input
                         type="text"
                         name="username"

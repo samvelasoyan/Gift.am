@@ -1,6 +1,7 @@
 @import './MainMenuAndSearch/MainMenuAndSearch.css';
 @import './Logo.css';
 @import './Account.css';
+@import './MobileHeader.css';
 
 .header{    
     width:100%;
@@ -15,4 +16,12 @@
 }
 .header > div{
     width: calc(100% / 3);
+}
+@media only screen and (max-width: 720px){
+    .header > .MobileHeaderH{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
