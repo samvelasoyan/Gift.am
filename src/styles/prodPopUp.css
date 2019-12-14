@@ -44,3 +44,25 @@
     cursor: pointer;
     border-bottom: 1px solid;
 }
+
+.buttons>.to-wishlist {
+    color: #e63042
+}
+
+.to-wishlist>.fa-heart{
+    color: inherit;
+}
+
+.to-cart>.fa-shopping-cart{
+    color: inherit;
+}
+
+.to-wishlist:active{
+    background-color: #e63042;
+    color: #fff;
+}
+
+.to-cart:active{
+    background-color: #041e42;
+    color: #fff;
+}

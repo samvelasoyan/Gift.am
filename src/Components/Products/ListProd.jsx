@@ -9,7 +9,7 @@ function ListProd({ image, name, price, category, id, removeFromWishListAction, 
         <div className="cart-product-box">
             <div
                 className="cart-prod-image"
-                style={{ background: `url(${image})`, backgroundSize: "contain" }}
+                style={{ background: `url(${image}) center / contain no-repeat`}}
             ></div>
             <div className="cart-prod-description">
                 <h4>{name}</h4>

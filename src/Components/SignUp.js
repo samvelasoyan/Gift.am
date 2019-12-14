@@ -27,8 +27,6 @@ class SignUp extends Component {
     };
 
     handleSubmit = (e) => {
-        e.preventDefault();
-
         formValidation(this.state)
             ? axios
                   .post("http://192.168.5.69:8003/api/Users/Register", this.state.form)
@@ -87,7 +85,7 @@ class SignUp extends Component {
                 className="signUp inputs"
                 style={this.props.data.formBool ? { left: "50%" } : { left: "150%" }}
             >
-                <form action="" onSubmit={this.handleSubmit} noValidate>
+                <form action="http://192.168.5.69:8003/api/Users/Register" onSubmit={this.handleSubmit} method="POST" noValidate>
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
                     <Input
                         type="text"

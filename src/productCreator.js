@@ -3,7 +3,7 @@ import { watchList, flowerList, perfumeList} from './data/data';
 const productCreator = (id,{ image, name, price, description, category}, arr) => {
     const product = {
         id,
-        image,
+        image: require(`${image}`),
         name,
         price,
         description,
@@ -17,8 +17,15 @@ const id = () => {
     return id;
 };
 export const perfume = [];
+export const jewelry = [];
 export const watches = [];
 export const flowers = [];
+export const teddybear = [];
+export const beverage = [];
+export const cakes = [];
+export const hampers = [];
+export const balloons = [];
+
 
 perfumeList.map(item => productCreator(id(), {...item}, perfume))
 

@@ -74,44 +74,50 @@ export const removeFromWishListAction = (id) => (dispatch, getState) => {
 export const addToCartAction = (category, id) => (dispatch, getState) => {
     const { total, products, cart } = getState().categories;
     let body = [...cart];
-    const newItem = products[category].find(item => item.id === id);
-    const existingItem = body.find(item => item.id === id)
-    if(existingItem){
-        newItem.quantity += 1
+    const newItem = products[category].find((item) => item.id === id);
+    const existingItem = body.find((item) => item.id === id);
+    if (existingItem) {
+        newItem.quantity += 1;
     } else {
-        newItem.quantity = 1
-        body = [...cart, newItem]
+        newItem.quantity = 1;
+        body = [...cart, newItem];
     }
-    let newTotal = total + newItem.price
+    let newTotal = total + newItem.price;
     dispatch({ type: "TO_CART", payload: body, total: newTotal });
 };
 
 export const removeFromCartAction = (id) => (dispatch, getState) => {
     const { total, cart } = getState().categories;
-    const body = cart.filter((item) => item.id !== id);
-    let newTotal = 0;
-    body.map(item=> newTotal = total + item.price)
+    let body = cart.filter(item => item.id !== id);
+    let newTotal = total;
+    cart.map((item) => {
+        if (item.id === id) {
+            newTotal -= item.price * item.quantity;
+        }
+        return newTotal
+    });
+
     dispatch({ type: "TO_CART", payload: body, total: newTotal });
 };
 
 export const addQuantityAction = (id) => (dispatch, getState) => {
     const { total, cart } = getState().categories;
-    const item = cart.find(item => item.id === id);
+    const item = cart.find((item) => item.id === id);
     item.quantity += 1;
-    let newTotal = total + item.price
+    let newTotal = total + item.price;
     dispatch({ type: "TO_CART", payload: cart, total: newTotal });
-}
+};
 
 export const subQuantityAction = (id) => (dispatch, getState) => {
-    const { total,cart } = getState().categories;
-    const item = cart.find(item => item.id === id);
+    const { total, cart } = getState().categories;
+    const item = cart.find((item) => item.id === id);
     let newTotal = 0;
-    if(item.quantity > 1){
+    if (item.quantity > 1) {
         item.quantity -= 1;
-        newTotal = total - item.price
+        newTotal = total - item.price;
     }
     dispatch({ type: "TO_CART", payload: cart, total: newTotal });
-}
+};
 
 //Routing actions
 
