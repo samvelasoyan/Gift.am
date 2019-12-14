@@ -1,4 +1,4 @@
-//Registration actions
+//---------Registration actions
 
 export const popUpAction = () => (dispatch, getState) => {
     const template = !getState().getData.template;
@@ -36,7 +36,7 @@ export const hideSignUpAction = () => (dispatch) => {
 };
 //---------------
 
-// Product actions
+// -------------------Product actions
 
 export const descriptionAction = (category, id) => (dispatch, getState) => {
     const { products } = getState().categories;
@@ -45,9 +45,9 @@ export const descriptionAction = (category, id) => (dispatch, getState) => {
     products[category].map((item) => {
         if (item.id === id) {
             item.description.bool = !item.description.bool;
-            body[category].push(item);
+            return body[category].push(item);
         } else {
-            item.description.bool = false;
+            return item.description.bool = false;
         }
     });
     body[category].sort((a, b) => a.price - b.price);
@@ -59,8 +59,9 @@ export const addToWishListAction = (category, id) => (dispatch, getState) => {
     const body = list.filter((item) => item.id !== id);
     products[category].map((item) => {
         if (item.id === id) {
-            body.push(item);
+            return body.push(item);
         }
+        return null
     });
     dispatch({ type: "TO_LIST", payload: body });
 };
@@ -119,9 +120,26 @@ export const subQuantityAction = (id) => (dispatch, getState) => {
     dispatch({ type: "TO_CART", payload: cart, total: newTotal });
 };
 
-//Routing actions
+//--------------Routing actions
 
 export const setCategoryAction = (text) => (dispatch) => {
     let body = text;
     dispatch({ type: "SET_CATEGORY", payload: body });
 };
+
+//-------------Search action
+
+export const searchAction = (value) => (dispatch, getState) => {
+    const { products } = getState().search;
+    let body = []
+    products.map(item => {
+        if(item.category.indexOf(value) !== -1){
+            return body.push(item)
+        } else if(item.name.toLowerCase().indexOf(value) !== -1){
+            return body.push(item)
+        }
+        return null
+    })
+    console.log(body)
+    dispatch({ type: "SEARCH", payload: body, value: value });
+}

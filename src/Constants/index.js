@@ -8,3 +8,4 @@ export const DESCRIPTION = "DESCRIPTION";
 export const CATEGORY = "SET_CATEGORY";
 export const TOCART = "TO_CART";
 export const TOLIST = "TO_LIST";
+export const SEARCH = "SEARCH";

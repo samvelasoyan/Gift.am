@@ -17,7 +17,7 @@ const ACTION_HANDLERS = {
 };
 
 const initState = {
-    products: {perfume, watches, flowers,},
+    products: {perfume, watches, flowers},
     list: [],
     cart: [],
     total: 0,

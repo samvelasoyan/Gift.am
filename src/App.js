@@ -5,16 +5,19 @@ import { bindActionCreators } from "redux";
 import { setCategoryAction } from "./actions/index.js";
 import Home from "./Home";
 import Category from "./Category";
+import Search from "./Search";
 
 class App extends Component {
     render() {
-      const {category} = this.props
+      const { category, value } = this.props
+      console.log(value)
         return (
             <div className='page'>
                 <Router>
                   <Switch>
                     <Route path="/" exact component={Home} />
                     <Route path={`/categories/${category}`} component={Category} />
+                    <Route path={`/search/${value}`} component={Search}/>
                   </Switch>
                 </Router>
             </div>
@@ -24,7 +27,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-      category: state.categories.category
+      category: state.categories.category,
+      value: state.search.value,
   };
 }
 
