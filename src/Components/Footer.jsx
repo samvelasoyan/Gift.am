@@ -1,7 +1,16 @@
 import React from "react";
 import background from "../images/IMG_14224.jpg";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { searchAction } from "../actions/searchActions";
+import { Link } from "react-router-dom";
 
-export default function Footer() {
+function Footer({ searchAction, loop }) {
+    const searchByTag = (e) => {
+        const value = e.target.innerHTML;
+        searchAction(value.slice(1, value.length - 1));
+        loop && setTimeout(() => loop(), 100)
+    };
     return (
         <div
             className="footer"
@@ -18,35 +27,40 @@ export default function Footer() {
                     <p>privacy policy</p>
                     <p>contact us</p>
                 </div>
-                <div>
-                    <h3>tags</h3>
-                    <span>#forWomen,</span>
-                    <span>#forMen,</span>
-                    <span>#forKids,</span>
-                    <span>#perfume,</span>
-                    <span>#jewelry,</span>
-                    <span>#watches,</span>
-                    <span> #flowers,</span>
-                    <span>#teddybear,</span>
-                    <span>#beverage,</span>
-                    <span>#sweet,</span>
-                    <span>#cakes,</span>
-                    <span> #baskets,</span>
-                    <span>#balloons,</span>
-                    <span>#wine,</span>
-                    <span>#roses,</span>
-                    <span>#silver,</span>
-                    <span>#whiskey,</span>
-                    <span> #candy,</span>
-                    <span>#giantTeddy,</span>
-                    <span>#chocolate,</span>
-                    <span>#christmas,</span>
-                    <span>#birthday,</span>
-                    <span> #helloween,</span>
-                    <span>#newYear,</span>
-                    <span>#valentine,</span>
-
-                </div>
+                <Link to="/search">
+                    <div onClick={searchByTag}>
+                        <h3>tags</h3>
+                        <span>#forWomen,</span>
+                        <span>#forMen,</span>
+                        <span>#forKids,</span>
+                        <span>#perfume,</span>
+                        <span>#jewelry,</span>
+                        <span>#watches,</span>
+                        <br />
+                        <span>#flowers,</span>
+                        <span>#teddybear,</span>
+                        <span>#beverage,</span>
+                        <span>#sweet,</span>
+                        <span>#cakes,</span>
+                        <br />
+                        <span>#baskets,</span>
+                        <span>#balloons,</span>
+                        <span>#wine,</span>
+                        <span>#roses,</span>
+                        <span>#silver,</span>
+                        <span>#whiskey,</span>
+                        <br />
+                        <span>#candy,</span>
+                        <span>#giantTeddy,</span>
+                        <span>#chocolate,</span>
+                        <span>#christmas,</span>
+                        <span>#birthday,</span>
+                        <br />
+                        <span>#helloween,</span>
+                        <span>#newYear,</span>
+                        <span>#valentine,</span>
+                    </div>
+                </Link>
             </div>
             <div className="footer-right">
                 <span className="soc-icon">
@@ -61,9 +75,20 @@ export default function Footer() {
                 </span>
                 <h1>Find us online!</h1>
             </div>
-            <div className='to-top'>
-                <a href="#home"><i className='fas fa-arrow-up'></i></a>
+            <div className="to-top">
+                <a href="#home">
+                    <i className="fas fa-arrow-up"></i>
+                </a>
             </div>
         </div>
     );
 }
+
+export default connect(
+    (state) => {
+        return { search: state.search };
+    },
+    (dispatch) => {
+        return bindActionCreators({ searchAction }, dispatch);
+    }
+)(Footer);

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import axios from 'axios';
 import Input from "./Input";
 import { formValidation, emailRegex } from "./formValidation";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { logInAction, signUpAction, hideFormAction } from "../actions/index.js";
+import { logInAction, signUpAction, hideFormAction, signUp } from "../actions/loginRegisterActions";
 
 class SignUp extends Component {
     state = {
@@ -27,10 +26,9 @@ class SignUp extends Component {
     };
 
     handleSubmit = (e) => {
+        e.preventDefault();
         formValidation(this.state)
-            ? axios
-                  .post("http://192.168.5.69:8003/api/Users/Register", this.state.form)
-                  .then((res) => console.log(res.data))
+            ? this.props.signUp(this.state.form)
             : console.log("FORM NO VALID");
     };
 
@@ -79,13 +77,20 @@ class SignUp extends Component {
     };
 
     render() {
+        console.log(localStorage, "localStorage")
+        console.log(this.props.signupData, "signup data");
         const { form, formErrors } = this.state;
         return (
             <div
                 className="signUp inputs"
                 style={this.props.data.formBool ? { left: "50%" } : { left: "150%" }}
             >
-                <form action="http://192.168.5.69:8003/api/Users/Register" onSubmit={this.handleSubmit} method="POST" noValidate>
+                <form
+                    action="http://192.168.5.69:8003/api/Users/Register"
+                    onSubmit={this.handleSubmit}
+                    method="POST"
+                    noValidate
+                >
                     <h1 style={{ fontWeight: "normal" }}>Create your account!</h1>
                     <Input
                         type="text"
@@ -159,9 +164,12 @@ class SignUp extends Component {
 
 export default connect(
     (state) => {
-        return { data: state.getData };
+        return {
+            data: state.getData,
+            signupData: state.getData.signUp
+        };
     },
     (dispatch) => {
-        return bindActionCreators({ logInAction, signUpAction, hideFormAction }, dispatch);
+        return bindActionCreators({ logInAction, signUpAction, hideFormAction, signUp }, dispatch);
     }
 )(SignUp);

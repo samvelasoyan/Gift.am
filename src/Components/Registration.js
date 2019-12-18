@@ -5,7 +5,7 @@ import LogIn from "./LogIn";
 import Logo from "../logo.png";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { popUpAction } from "../actions/index.js";
+import { popUpAction } from "../actions/loginRegisterActions";
 import Background1 from "../images/IMG_14222.jpg";
 import Background from "../images/presents2.jpg";
 

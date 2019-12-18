@@ -34,7 +34,7 @@ class MainMenuAndSearch extends Component{
                 {this.state.MainMenuBool && <MainMenu/>}
                 {this.state.MainMenuDemoBool && <MainMenuDemo show={this.showMainMenu}/>}
                 {this.state.HeaderSearchDemoBool && <HeaderSearchDemo show={this.showMainSearch}/>}
-                {this.state.HeaderSearchBool && <HeaderSearch styleHeaderSearchBool={styleHeaderSearchBool}/>}
+                {this.state.HeaderSearchBool && <HeaderSearch loop={this.props.loop} styleHeaderSearchBool={styleHeaderSearchBool}/>}
             </div>
         )
     }

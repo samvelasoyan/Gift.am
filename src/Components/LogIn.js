@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Input from "./Input";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { signUpAction, logInAction, hideFormAction } from "../actions/index.js";
+import { bindActionCreators} from "redux";
+import { signUpAction, logInAction, hideFormAction, logIn } from '../actions/loginRegisterActions'
 
 class LogIn extends Component {
     state = {
-        login: "",
+        Email: "",
         password: ""
     };
     handleChange = (e) => {
@@ -19,14 +18,17 @@ class LogIn extends Component {
         setTimeout(() => this.props.hideFormAction(), 1);
         setTimeout(() => this.props.logInAction(), 600);
     };
-    handleSubmit = () => {
+    handleSubmit = (e) => {
         debugger
-        axios
-            .post("http://192.168.5.69:8003/api/Users/Login", this.state)
-            .then((res) => console.log(res.data));
+        e.preventDefault()
+        this.props.logIn(this.state)
+        // axios
+        //     .post("http://192.168.5.69:8003/api/Users/Login", this.state)
+        //     .then((res) => console.log(res.data));
     };
     render() {
         const { login, password } = this.state;
+        console.log(this.props.data.logIn, "verjapess")
         return (
             <div
                 className="logIn inputs"
@@ -73,6 +75,6 @@ export default connect(
         return { data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ signUpAction, logInAction, hideFormAction }, dispatch);
+        return bindActionCreators({ signUpAction, logInAction, hideFormAction, logIn }, dispatch);
     }
 )(LogIn);

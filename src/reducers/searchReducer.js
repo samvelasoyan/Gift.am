@@ -17,6 +17,5 @@ const searchReducer = (state = initState, action) => {
     const handler = ACTION_HANDLERS[action.type]
     return handler ? handler(state,action) : state 
 }
-console.log(initState.products)
 
 export default searchReducer;

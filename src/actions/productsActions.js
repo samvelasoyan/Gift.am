@@ -1,43 +1,3 @@
-//---------Registration actions
-
-export const popUpAction = () => (dispatch, getState) => {
-    const template = !getState().getData.template;
-    dispatch({ type: "EDIT", payload: template });
-};
-
-export const enterSignUpAction = () => (dispatch) => {
-    dispatch({ type: "SIGNUP", payload: true });
-    dispatch({ type: "LOGIN", payload: false });
-};
-
-export const enterLogInAction = () => (dispatch) => {
-    dispatch({ type: "SIGNUP", payload: false });
-    dispatch({ type: "LOGIN", payload: true });
-};
-
-export const signUpAction = () => (dispatch, getState) => {
-    dispatch({ type: "SIGNUP", payload: !getState().getData.signUp });
-};
-
-export const logInAction = () => (dispatch, getState) => {
-    dispatch({ type: "LOGIN", payload: !getState().getData.logIn });
-};
-
-export const hideFormAction = () => (dispatch, getState) => {
-    dispatch({ type: "HIDE_FORM", payload: !getState().getData.formBool });
-};
-
-export const hideLogInAction = () => (dispatch) => {
-    dispatch({ type: "LOGIN_FORM", payload: false });
-};
-
-export const hideSignUpAction = () => (dispatch) => {
-    dispatch({ type: "SIGNUP_FORM", payload: true });
-};
-//---------------
-
-// -------------------Product actions
-
 export const descriptionAction = (category, id) => (dispatch, getState) => {
     const { products } = getState().categories;
     const body = { ...products };
@@ -47,7 +7,7 @@ export const descriptionAction = (category, id) => (dispatch, getState) => {
             item.description.bool = !item.description.bool;
             return body[category].push(item);
         } else {
-            return item.description.bool = false;
+            return (item.description.bool = false);
         }
     });
     body[category].sort((a, b) => a.price - b.price);
@@ -61,7 +21,7 @@ export const addToWishListAction = (category, id) => (dispatch, getState) => {
         if (item.id === id) {
             return body.push(item);
         }
-        return null
+        return null;
     });
     dispatch({ type: "TO_LIST", payload: body });
 };
@@ -89,13 +49,13 @@ export const addToCartAction = (category, id) => (dispatch, getState) => {
 
 export const removeFromCartAction = (id) => (dispatch, getState) => {
     const { total, cart } = getState().categories;
-    let body = cart.filter(item => item.id !== id);
+    let body = cart.filter((item) => item.id !== id);
     let newTotal = total;
     cart.map((item) => {
         if (item.id === id) {
             newTotal -= item.price * item.quantity;
         }
-        return newTotal
+        return newTotal;
     });
 
     dispatch({ type: "TO_CART", payload: body, total: newTotal });
@@ -119,27 +79,3 @@ export const subQuantityAction = (id) => (dispatch, getState) => {
     }
     dispatch({ type: "TO_CART", payload: cart, total: newTotal });
 };
-
-//--------------Routing actions
-
-export const setCategoryAction = (text) => (dispatch) => {
-    let body = text;
-    dispatch({ type: "SET_CATEGORY", payload: body });
-};
-
-//-------------Search action
-
-export const searchAction = (value) => (dispatch, getState) => {
-    const { products } = getState().search;
-    let body = []
-    products.map(item => {
-        if(item.category.indexOf(value) !== -1){
-            return body.push(item)
-        } else if(item.name.toLowerCase().indexOf(value) !== -1){
-            return body.push(item)
-        }
-        return null
-    })
-    console.log(body)
-    dispatch({ type: "SEARCH", payload: body, value: value });
-}

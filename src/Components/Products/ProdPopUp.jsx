@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { descriptionAction, addToWishListAction, addToCartAction } from "../../actions/index";
+import { descriptionAction, addToWishListAction, addToCartAction } from "../../actions/productsActions";
 
 function ProdPopUp({ image, name, price, description, id, category, descriptionAction, addToWishListAction, addToCartAction,popUp}) {
     const closePopUp = () => {

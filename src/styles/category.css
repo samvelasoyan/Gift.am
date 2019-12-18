@@ -106,3 +106,13 @@
     font-size: 1.5vw;
     transition: 300ms;
 } 
+
+.empty-search{
+    width: 100%;
+    padding: 15%;
+    text-align: center;
+}
+
+.empty-search>h1{
+    color: #041e42;
+}

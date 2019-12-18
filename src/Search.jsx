@@ -6,7 +6,7 @@ import Prod from "./Components/Products/Prod";
 import ProdPopUp from "./Components/Products/ProdPopUp";
 import AccountMenu from "./Components/AccountMenuRight/AccountMenu";
 import WishListMenu from "./Components/AccountMenuRight/WishListMenu";
-import CartMenu from './Components/AccountMenuRight/CartMenu';
+import CartMenu from "./Components/AccountMenuRight/CartMenu";
 import MobileMenu from "./Components/MobileMenu/MobileMenu";
 import Registration from "./Components/Registration";
 import "./styles/category.css";
@@ -14,7 +14,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { descriptionAction, popUpAction } from "./actions/index";
+import { descriptionAction } from "./actions/productsActions";
+import { popUpAction } from "./actions/loginRegisterActions";
+
 
 class Category extends Component {
     state = {
@@ -84,6 +86,10 @@ class Category extends Component {
         window.scrollTo(0, 0);
     }
 
+    // componentWillReceiveProps(){
+    //     this.loop();
+    // }
+
     loop = () => {
         const { searchItems } = this.props.search;
         const num = Math.floor(searchItems.length / 8);
@@ -111,6 +117,7 @@ class Category extends Component {
                         openMobileMenu={this.openMobileMenu}
                         openWishListMenu={this.openWishListMenu}
                         openCartMenu={this.openCartMenu}
+                        loop={this.loop}
                     />
                     <div id="Slider">
                         <Slider
@@ -121,29 +128,35 @@ class Category extends Component {
                             dots={true}
                         >
                             {pages &&
-                                pages.map((page) => {
+                                pages.map((page, index) => {
                                     return (
-                                        <div>
+                                        <div key={index}>
                                             <div
                                                 className="product-container"
                                                 style={{ display: "flex" }}
                                             >
-                                                {page.map((item) => {
-                                                    return (
-                                                        <Prod
-                                                            {...item}
-                                                            key={item.id}
-                                                            popUp={this.popUp}
-                                                        />
-                                                    );
-                                                })}
+                                                {page.length > 0 ? (
+                                                    page.map((item, index) => {
+                                                        return (
+                                                            <Prod
+                                                                {...item}
+                                                                key={index}
+                                                                popUp={this.popUp}
+                                                            />
+                                                        );
+                                                    })
+                                                ) : (
+                                                    <div className="empty-search">
+                                                        <h1>Nothing Found!</h1>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     );
                                 })}
                         </Slider>
                     </div>
-                    <Footer />
+                    <Footer loop={this.loop}/>
                 </div>
                 {pages &&
                     pages.map((page) => {

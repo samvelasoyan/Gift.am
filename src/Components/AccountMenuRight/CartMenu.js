@@ -2,7 +2,7 @@ import React,{Component,Fragment} from 'react';
 import CartProd from '../Products/CartProd';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { descriptionAction } from "../../actions/index";
+import { descriptionAction } from "../../actions/productsActions";
 
 class CartMenu extends Component{
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { removeFromCartAction, addQuantityAction, subQuantityAction } from "../../actions/index";
+import { removeFromCartAction, addQuantityAction, subQuantityAction } from "../../actions/productsActions";
 
 function CartProd({ image, name, price, id, quantity, removeFromCartAction, addQuantityAction, subQuantityAction }) {
     return (

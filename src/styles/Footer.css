@@ -26,9 +26,16 @@
     font-size: 1.2vw;
     width: 26%;
 }
-.footer-centre>*>*:hover{
+.footer-centre>a>div>*:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+.footer-centre>a>div>*{
+    font-size: 1.2vw;
+}
+.footer-centre>a{
+    display: inline-block;
+    margin: 0 2%;
 }
 .footer-centre>div{
     display: inline-block;

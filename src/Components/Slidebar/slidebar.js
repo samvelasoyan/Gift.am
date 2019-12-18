@@ -71,6 +71,9 @@ class App extends Component{
       }
     },2500)
   }
+  componentWillUnmount(){
+    clearInterval(this.autoSlide)
+  }
   slideLeft=()=>{
     clearInterval(this.autoSlide)
     if(this.state.transition === false){

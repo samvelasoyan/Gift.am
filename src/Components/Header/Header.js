@@ -36,7 +36,7 @@ class Header extends Component{
                     :
                     <Fragment>
                         <Logo/>
-                        <MainMenuAndSearch/>
+                        <MainMenuAndSearch loop={this.props.loop}/>
                         <Account 
                             openAccountMenu={this.props.openAccountMenu} 
                             openWishListMenu={this.props.openWishListMenu}

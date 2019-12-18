@@ -10,7 +10,7 @@ import Categories from './Components/Categories';
 import Footer from './Components/Footer'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { popUpAction } from "./actions/index.js";
+import { popUpAction } from "./actions/loginRegisterActions";
 // import resize from './resize';
 
 class Home extends Component {

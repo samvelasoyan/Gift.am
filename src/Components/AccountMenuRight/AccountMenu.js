@@ -1,7 +1,7 @@
 import React,{Component,Fragment} from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { popUpAction, enterLogInAction, enterSignUpAction, hideSignUpAction, hideLogInAction } from "../../actions/index.js";
+import { popUpAction, enterLogInAction, enterSignUpAction, hideSignUpAction, hideLogInAction } from "../../actions/loginRegisterActions";
 
 class AccountMenu extends Component{
     

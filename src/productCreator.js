@@ -1,13 +1,14 @@
 import { watchList, flowerList, perfumeList} from './data/data';
 
-const productCreator = (id,{ image, name, price, description, category}, arr) => {
+const productCreator = (id,{ image, name, price, description, category, tags}, arr) => {
     const product = {
         id,
         image: require(`${image}`),
         name,
         price,
         description,
-        category
+        category,
+        tags
     };
     return arr.push(product);
 };

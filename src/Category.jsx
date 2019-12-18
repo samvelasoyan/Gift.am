@@ -14,7 +14,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { descriptionAction, popUpAction } from "./actions/index";
+import { descriptionAction } from "./actions/productsActions";
+import { popUpAction } from "./actions/loginRegisterActions";
 
 class Category extends Component {
     state = {
@@ -122,18 +123,18 @@ class Category extends Component {
                             dots={true}
                         >
                             {pages &&
-                                pages.map((page) => {
+                                pages.map((page, index) => {
                                     return (
-                                        <div>
+                                        <div key={index}>
                                             <div
                                                 className="product-container"
                                                 style={{ display: "flex" }}
                                             >
-                                                {page.map((item) => {
+                                                {page.map((item, index) => {
                                                     return (
                                                         <Prod
                                                             {...item}
-                                                            key={item.id}
+                                                            key={index}
                                                             popUp={this.popUp}
                                                         />
                                                     );

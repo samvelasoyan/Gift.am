@@ -2,7 +2,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { removeFromWishListAction, addToCartAction } from "../../actions/index";
+import { removeFromWishListAction, addToCartAction } from "../../actions/productsActions";
 
 function ListProd({ image, name, price, category, id, removeFromWishListAction, addToCartAction }) {
     return (
