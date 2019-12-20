@@ -15,18 +15,21 @@ export const signUp = (data) => (dispatch) => {
 };
 
 export const logIn = (obj) => (dispatch) => {
-    let data = { ...obj, token: localStorage.getItem(`${obj.email}Token`) };
-    axios.post("http://192.168.5.69:8003/api/Users/Login", data).then((res) => {
-        console.log(res.data);
-        if (res.status === 200) {
-            dispatch({
-                type: LOGIN,
-                payload: res.data
-            })
-        }
-    });
+    let data = { ...obj };
+    let header = { token: localStorage.getItem([`${obj.Email}Token`]) };
+    console.log(obj)
+    axios
+        .post("http://192.168.5.69:8003/api/Users/Login", data, { headers: header })
+        .then((res) => {
+            console.log(res.data);
+            if (res.status === 200) {
+                dispatch({
+                    type: LOGIN,
+                    payload: res.data
+                });
+            }
+        });
 };
-
 
 export const popUpAction = () => (dispatch, getState) => {
     const template = !getState().getData.template;

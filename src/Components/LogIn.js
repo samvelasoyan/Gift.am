@@ -38,7 +38,7 @@ class LogIn extends Component {
                     <h1 style={{ fontWeight: "normal" }}>Log In</h1>
                     <Input
                         type="text"
-                        name="login"
+                        name="Email"
                         placeholder="Email or Username"
                         handleChange={this.handleChange}
                         labelBool={login !== ""}

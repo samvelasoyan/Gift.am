@@ -1,4 +1,4 @@
-import { EDIT, SIGNUP, LOGIN, SIGNUP_FORM, LOGIN_FORM, HIDE_FORM } from "../Constants";
+import { EDIT, SIGNUP, LOGIN, SIGNUP_FORM, LOGIN_FORM, HIDE_FORM, LOGGEDUSER } from "../Constants";
 
 const ACTION_HANDLERS = {
     [EDIT]: (state, action) => {
@@ -36,13 +36,20 @@ const ACTION_HANDLERS = {
             ...state,
             formBool: action.payload
         };
+    },
+    [LOGGEDUSER]: (state, action) => {
+        return {
+            ...state,
+            loggedUser: action.payload
+        }
     }
 };
 const initialState = {
     template: false,
     signUp: null,
     logIn: null,
-    formBool: true
+    formBool: true,
+    loggedUser: {},
 };
 
 const registrationReducer = (state = initialState, action) => {

@@ -10,3 +10,4 @@ export const TOCART = "TO_CART";
 export const TOLIST = "TO_LIST";
 export const SEARCH = "SEARCH";
 export const STORE_REGISTERED_USER_DATA ="STORE_REGISTERED_USER_DATA";
+export const LOGGEDUSER = "LOGGEDUSER"
