@@ -27,9 +27,10 @@ class SignUp extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        formValidation(this.state)
-            ? this.props.signUp(this.state.form)
-            : console.log("FORM NO VALID");
+        if (formValidation(this.state)) {
+            this.props.signUp(this.state.form);
+            this.logIn();
+        } else { console.log("FORM NO VALID") }
     };
 
     handleChange = (e) => {
@@ -65,20 +66,15 @@ class SignUp extends Component {
 
     logIn = () => {
         this.props.logInAction();
-        console.log("logIn");
         setTimeout(() => {
             this.props.hideFormAction();
-            console.log("formBool");
         }, 10);
         setTimeout(() => {
             this.props.signUpAction();
-            console.log("signUp");
         }, 600);
     };
 
     render() {
-        console.log(localStorage, "localStorage")
-        console.log(this.props.signupData, "signup data");
         const { form, formErrors } = this.state;
         return (
             <div

@@ -42,7 +42,6 @@ class Registration extends Component {
                         style={{
                             background: `url(${Logo}) no-repeat`,
                             backgroundSize: "100%",
-                            // left: `${!formBool ? "2%" : "75%"}`
                         }}
                     ></span>
                     <div
@@ -58,7 +57,6 @@ class Registration extends Component {
                             className="logo"
                             style={{ background: `url(${Logo}) no-repeat`, backgroundSize: "100%" }}
                         ></div>
-                        {/* <Text {...this.state} onClick={this.changeTemplate} /> */}
                     </div>
                 </div>
 

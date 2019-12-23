@@ -1,9 +1,20 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {enterLogInAction, hideLogInAction, popUpAction} from '../../actions/loginRegisterActions'
 
 class Account extends Component {
+    state = {
+        guestMode: localStorage.getItem('guestMode')
+    }
 
-
+    logIn = () => {
+        this.props.enterLogInAction();
+        this.props.hideLogInAction();
+        this.props.popUpAction();
+    };
     render() {
+        const {guestMode} = this.state
         return (
             <div className="ar">
                 <div className="account">
@@ -11,11 +22,11 @@ class Account extends Component {
                         <i className="fas fa-user"></i>
                         <span>Account</span>
                     </div>
-                    <div className="acc wishList" onClick={this.props.openWishListMenu}>
+                    <div className="acc wishList" onClick={guestMode === 'off'? this.props.openWishListMenu : this.logIn}>
                         <i className="fas fa-heart"></i>
                         <span>Wish List</span>
                     </div>
-                    <div className="acc cart" onClick={this.props.openCartMenu}>
+                    <div className="acc cart" onClick={guestMode? this.props.openCartMenu : this.logIn}>
                         <i className="fas fa-shopping-cart"></i>
                         <span>Cart</span>
                     </div>
@@ -24,4 +35,15 @@ class Account extends Component {
         );
     }
 }
-export default Account;
+
+export default connect(
+    (state) => {
+        return { data: state.getData };
+    },
+    (dispatch) => {
+        return bindActionCreators(
+            { popUpAction, enterLogInAction, hideLogInAction },
+            dispatch
+        );
+    }
+)(Account);

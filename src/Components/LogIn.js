@@ -19,15 +19,11 @@ class LogIn extends Component {
         setTimeout(() => this.props.logInAction(), 600);
     };
     handleSubmit = (e) => {
-        debugger
         e.preventDefault()
         this.props.logIn(this.state)
-        // axios
-        //     .post("http://192.168.5.69:8003/api/Users/Login", this.state)
-        //     .then((res) => console.log(res.data));
     };
     render() {
-        const { login, password } = this.state;
+        const { Email, password } = this.state;
         console.log(this.props.data.logIn, "verjapess")
         return (
             <div
@@ -41,7 +37,7 @@ class LogIn extends Component {
                         name="Email"
                         placeholder="Email or Username"
                         handleChange={this.handleChange}
-                        labelBool={login !== ""}
+                        labelBool={Email !== ""}
                         icon="fas fa-user"
                     />
                     <Input

@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'; 
 
 export default function MainMenu (){
         return(
         <ul className='MenuUL'>
             <li className='mainMenuList'>
-                <a href='#home'>Home</a>
+                <Link to='/' href='#home'>Home</Link>
             </li>
             <li className='mainMenuList'>
                 <a href='#categories'>Categories</a>

@@ -1,4 +1,4 @@
-import { EDIT, SIGNUP, LOGIN, SIGNUP_FORM, LOGIN_FORM, HIDE_FORM, LOGGEDUSER } from "../Constants";
+import { EDIT, SIGNUP, LOGIN, SIGNUP_FORM, LOGIN_FORM, HIDE_FORM, LOGGEDUSER, ERROR } from "../Constants";
 
 const ACTION_HANDLERS = {
     [EDIT]: (state, action) => {
@@ -41,6 +41,11 @@ const ACTION_HANDLERS = {
         return {
             ...state,
             loggedUser: action.payload
+        }},
+    [ERROR]: (state, action) => {
+        return {
+            ...state,
+            error: action.payload
         }
     }
 };
@@ -49,6 +54,7 @@ const initialState = {
     signUp: null,
     logIn: null,
     formBool: true,
+    error: false,
     loggedUser: {},
 };
 
