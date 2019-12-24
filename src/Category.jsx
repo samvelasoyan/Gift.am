@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { descriptionAction } from "./actions/productsActions";
+import { setCategoryAction } from "./actions/routingActions";
 import { popUpAction } from "./actions/loginRegisterActions";
 
 class Category extends Component {
@@ -81,7 +82,8 @@ class Category extends Component {
     };
 
     componentDidMount() {
-        this.loop();
+        this.props.setCategoryAction(localStorage.getItem('category'))
+        setTimeout(() => this.loop());
         window.scrollTo(0, 0);
     }
 
@@ -102,7 +104,6 @@ class Category extends Component {
             this.setState({ pages });
         }
     };
-
     render() {
         const { pages } = this.state;
         return (
@@ -191,6 +192,6 @@ export default connect(
         return { categories: state.categories, data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ descriptionAction, popUpAction }, dispatch);
+        return bindActionCreators({ descriptionAction, popUpAction, setCategoryAction }, dispatch);
     }
 )(Category);
