@@ -3,12 +3,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { setCategoryAction } from "./actions/routingActions";
+import { getUserAction } from './actions/loginRegisterActions';
 import Home from "./Home";
 import Category from "./Category";
 import Search from "./Search";
 import Error from "./Error";
 
 class App extends Component {
+
+    componentDidMount(){
+        this.props.getUserAction()
+    }
+
     render() {
         const { category, error } = this.props;
         return (
@@ -37,7 +43,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ setCategoryAction }, dispatch);
+    return bindActionCreators({ setCategoryAction, getUserAction }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

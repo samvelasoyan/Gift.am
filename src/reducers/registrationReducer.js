@@ -1,5 +1,6 @@
 import { EDIT, SIGNUP, LOGIN, SIGNUP_FORM, LOGIN_FORM, HIDE_FORM, LOGGEDUSER, ERROR } from "../Constants";
 
+
 const ACTION_HANDLERS = {
     [EDIT]: (state, action) => {
         return {

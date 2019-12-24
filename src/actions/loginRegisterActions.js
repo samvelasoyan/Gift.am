@@ -14,17 +14,15 @@ export const signUp = (data) => (dispatch) => {
     axios.post("http://192.168.5.69:8003/api/Users/Register", data).then((res) => {
         console.log(res.data, "data");
         if (res.status === 200) {
-            localStorage.setItem(`${res.data.email}Token`, res.data.token);
+            localStorage.setItem(`token`, res.data.token);
+            localStorage.setItem(`username`, res.data.username);
             dispatch({
                 type: LOGGEDUSER,
                 payload: res.data
             });
-        } else {
-            dispatch({
-                type: ERROR
-            });
-        }
-    });
+        } 
+    })
+    .catch(err => dispatch({type: ERROR, payload: true}))
 };
 
 export const logIn = (data) => (dispatch, getState) => {
@@ -36,6 +34,8 @@ export const logIn = (data) => (dispatch, getState) => {
         .then((res) => {
             console.log(res.data);
             if (res.status === 200) {
+                localStorage.setItem(`email`, res.data.email);
+                localStorage.setItem("password", res.data.password);
                 dispatch({
                     type: LOGGEDUSER,
                     payload: res.data
@@ -43,13 +43,30 @@ export const logIn = (data) => (dispatch, getState) => {
                 localStorage.setItem("guestMode", "off");
                 const template = !getState().getData.template;
                 dispatch({ type: EDIT, payload: template });
-            } else {
+            } 
+        })
+        .catch(err => dispatch({type: ERROR, payload: true}))
+};
+
+export const getUserAction = () => (dispatch) => {
+    let password = localStorage.getItem("password");
+    let email = localStorage.getItem(`email`);
+    if (password.length > 0) {
+        axios
+            .post(
+                `http://192.168.5.69:8003/api/Users/Login`,
+                { email, password },
+                {
+                    "Content-Type": "application/json"
+                }
+            )
+            .then((res) => {
                 dispatch({
-                    type: ERROR,
-                    payload: true
+                    type: LOGGEDUSER,
+                    payload: res.data
                 });
-            }
-        });
+            });
+    }
 };
 
 export const logOut = () => (dispatch) => {
@@ -58,6 +75,8 @@ export const logOut = () => (dispatch) => {
         payload: {}
     });
     localStorage.setItem("guestMode", "on");
+    localStorage.setItem("email", "");
+    localStorage.setItem("password", "");
 };
 
 export const errorAction = () => (dispatch) => {

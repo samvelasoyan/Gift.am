@@ -76,6 +76,8 @@ export const subQuantityAction = (id) => (dispatch, getState) => {
     if (item.quantity > 1) {
         item.quantity -= 1;
         newTotal = total - item.price;
+    } else {
+        newTotal = total;
     }
     dispatch({ type: "TO_CART", payload: cart, total: newTotal });
 };
