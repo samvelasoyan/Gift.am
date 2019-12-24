@@ -24,7 +24,6 @@ class LogIn extends Component {
     };
     render() {
         const { Email, password } = this.state;
-        console.log(this.props.data.logIn, "verjapess")
         return (
             <div
                 className="logIn inputs"

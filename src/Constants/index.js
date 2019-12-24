@@ -12,3 +12,4 @@ export const SEARCH = "SEARCH";
 export const STORE_REGISTERED_USER_DATA ="STORE_REGISTERED_USER_DATA";
 export const LOGGEDUSER = "LOGGEDUSER";
 export const ERROR = "ERROR";
+export const LOADER = 'LOADER'

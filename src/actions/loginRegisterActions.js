@@ -6,27 +6,38 @@ import {
     LOGIN_FORM,
     SIGNUP_FORM,
     ERROR,
-    LOGGEDUSER
+    LOGGEDUSER,
+    LOADER
 } from "../Constants";
 import axios from "axios";
 
 export const signUp = (data) => (dispatch) => {
-    axios.post("http://192.168.5.69:8003/api/Users/Register", data).then((res) => {
-        console.log(res.data, "data");
-        if (res.status === 200) {
-            localStorage.setItem(`token`, res.data.token);
-            localStorage.setItem(`username`, res.data.username);
-            dispatch({
-                type: LOGGEDUSER,
-                payload: res.data
-            });
-        } 
-    })
-    .catch(err => dispatch({type: ERROR, payload: true}))
+    dispatch({ type: LOADER });
+    axios
+        .post("http://192.168.5.69:8003/api/Users/Register", data)
+        .then((res) => {
+            console.log(res.data, "data");
+            if (res.status === 200) {
+                localStorage.setItem(`token`, res.data.token);
+                localStorage.setItem(`username`, res.data.username);
+                dispatch({
+                    type: LOGGEDUSER,
+                    payload: res.data
+                });
+                dispatch({ type: LOADER });
+            }
+        })
+        .catch((err) => {
+            dispatch({ type: LOADER });
+            dispatch({ type: ERROR, payload: true });
+        });
 };
 
 export const logIn = (data) => (dispatch, getState) => {
     const body = { ...data };
+    const template = !getState().getData.template;
+    dispatch({ type: EDIT, payload: template });
+    dispatch({ type: LOADER });
     axios
         .post("http://192.168.5.69:8003/api/Users/Login", body, {
             "Content-Type": "application/json"
@@ -41,11 +52,13 @@ export const logIn = (data) => (dispatch, getState) => {
                     payload: res.data
                 });
                 localStorage.setItem("guestMode", "off");
-                const template = !getState().getData.template;
-                dispatch({ type: EDIT, payload: template });
-            } 
+                dispatch({ type: LOADER });
+            }
         })
-        .catch(err => dispatch({type: ERROR, payload: true}))
+        .catch((err) => {
+            dispatch({ type: LOADER });
+            dispatch({ type: ERROR, payload: true });
+        });
 };
 
 export const getUserAction = () => (dispatch) => {
