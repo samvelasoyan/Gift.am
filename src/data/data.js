@@ -5,7 +5,7 @@
     price: 500,
     description: {bool: false, txt: "Mens Citizen Navihawk AT Alarm Chronograph Radio Controlled Eco-Drive Watch JY8037-50E"},
     category:"watches",
-        tags: "formen, watches, birthday"
+    tags: "formen, watches, birthday"
 },
 {
     image:"./images/products/watches/fossil.jpg",
@@ -410,4 +410,483 @@ export const perfumeList = [
         category:"perfume",
         tags: "formen, perfume, birthday, newyear, valentine"
     },
+]
+
+export const jewelryList = [
+    {
+         
+        image:"./images/products/jewelery/silver1.jpg",
+        name:"HALO NECKLACE",
+        price:29,
+        description:{bool:false, txt: "STERLING SILVER CUBIC ZIRCONIA HALO NECKLACE"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver1.jpg",
+        name:"STONE NECKLACE",
+        price:29,
+        description:{bool:false, txt: "SILVER CUBIC ZIRCONIA THREE STONE NECKLACE"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver3.jpg",
+        name:"ZIRCONIA PENDANT",
+        price:29,
+        description:{bool:false, txt: "SILVER MARCH TURQUOISE CUBIC ZIRCONIA PENDANT"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver4.jpg",
+        name:"GUCCI 18CT",
+        price:29,
+        description:{bool:false, txt: "GUCCI 18CT WHITE GOLD FLOWER AND DOUBLE G DIAMOND DROP EARRINGS"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver5.jpg",
+        name:"DIAMOND FELINE EARRINGS",
+        price:29,
+        description:{bool:false, txt: "GUCCI 18CT YELLOW GOLD ONYX & DIAMOND FELINE EARRINGS"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver6.jpg",
+        name:"FELINE BRACELET",
+        price:29,
+        description:{bool:false, txt: "GUCCI 18CT YELLOW GOLD ONYX & DIAMOND FELINE BRACELET"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver7.jpg",
+        name:"PENDANT",
+        price:29,
+        description:{bool:false, txt: "SILVER CANCER STAR CONSTELLATION PENDANT"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver8.jpg",
+        name:" MARQUISE DROP",
+        price:29,
+        description:{bool:false, txt: "9CT WHITE GOLD 0.15CT MARQUISE DROP"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver9.jpg",
+        name:"DIAMOND EARRINGS",
+        price:29,
+        description:{bool:false, txt: "9CT WHITE GOLD 0.15CT TENSION SET GOLDSMITHS BRIGHTEST DIAMOND EARRINGS"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/jewelery/silver10.jpg",
+        name:"STUD EARRINGS",
+        price:29,
+        description:{bool:false, txt: "9CT YELLOW GOLD 0.15CT GOLDSMITHS BRIGHTEST DIAMOND SWOOP STUD EARRINGS"},
+        category:"jewelry",
+        tags: "forwomen, jewelery, birthday, newyear, valentine"
+    },
+]
+
+export const teddybearList = [
+    {
+         
+        image:"./images/products/teddybear/teddybear1.jpg",
+        name:"teddybear",
+        price:29,
+        description:{bool:false, txt: "Giant Teddy bear Cuddly bear XXL 100 cm large Plush bear Soft toy - soft to the touch"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear2.jpg",
+        name:"Panda bear",
+        price:29,
+        description:{bool:false, txt: "Giant Teddy bear Cuddly bear XXL 100 cm large Plush bear Soft toy - soft to the touch"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear3.jpg",
+        name:" Cuddly bear",
+        price:29,
+        description:{bool:false, txt: "Giant teddy bear Cuddly bear XXL 100 cm big white with heart Plush bear cuddly toy velvety soft"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear4.jpg",
+        name:" Bear Cuddly",
+        price:29,
+        description:{bool:false, txt: "Giant Teddy Bear Cuddly XXL 100 cm tall plush stuffed animal velvety soft - for love"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear5.jpg",
+        name:" Bear velvety soft with pink dress",
+        price:29,
+        description:{bool:false, txt: "Giant Teddy Bear Cuddly bear XXL 100 cm large Plush bear velvety soft with pink dress- to the love"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear6.jpg",
+        name:"Bear at Stone",
+        price:29,
+        description:{bool:false, txt: "A Teddy Bear at Stone Oak Flowers and More"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear7.jpg",
+        name:"Brown Bear",
+        price:29,
+        description:{bool:false, txt: "Every stuffed animal needs a good home, and this Jellycat plush bear is no exception. With a soft, huggable construction and charming design, it's the pet you've been waiting to adopt."},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear8.jpg",
+        name:" Plush Teddy Bear ",
+        price:29,
+        description:{bool:false, txt:"This adorable bear is about 38-inch of huggable, loveable stuffed animal. Complete with a ribbon on his neck, this supersized best friend will look great in any bedroom or playroom"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear9.jpg",
+        name:" Monzana Teddy Bear ",
+        price:29,
+        description:{bool:false, txt:"This adorable bear is about 38-inch of huggable, loveable stuffed animal. Complete with a ribbon on his neck, this supersized best friend will look great in any bedroom or playroom"},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+    {
+         
+        image:"./images/products/teddybear/teddybear10.jpg",
+        name:" JOON Huge Plush Teddy Bear ",
+        price:29,
+        description:{bool:false,txt:"This adorable bear is about 38-inch of huggable, loveable stuffed animal. Complete with a ribbon on his neck, "},
+        category:"teddybear",
+        tags: "forwomen, teddybear, birthday, newyear, valentine"
+    },
+]
+
+export const beveragesList = [ 
+    {
+        tags: "forwomen, drinks, birthday, newyear",
+        name:" Jack Daniels",
+        price:50,
+        description:{bool:false,txt:"Chivas 12 is smooth, rich and generous. It's a blend of the finest malt and grain whiskies matured for at least 12 years, that deliver luxurious honey,"},
+        category:"beverage",
+        image:"./images/products/beverage/jack_daniels.png"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Jameson",
+        price:20,
+        description:{bool:false,txt:"Jameson is produced from a blend of grain whiskey and single pot still whiskey, which uses a mixture of malted and unmalted or green Irish barley, "},
+        category:"beverage",
+        image:"./images/products/beverage/jameson.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Macallan Triple Cask Matured 12 Years",
+        price:40,
+        description:{bool:false,txt:"The Macallan Triple Cask Matured 12 Years Old forms part of the Triple Cask Matured range; a series of single malt whiskies crafted in a triple cask combination of European and American sherry seasoned oak casks and American ex-bourbon oak casks"},
+        category:"beverage",
+        image:"./images/products/beverage/macallan_12.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Chivas Regal 12 years old",
+        price:30,
+        description:{bool:false,txt:"Chivas Regal is a world-famous Scotch blend which was first made in the early 20th century by Chivas Brothers. The company can trace its roots back to 1801,"},
+        category:"beverage",
+        image:"./images/products/beverage/chivas_regal.png"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"White Horse",
+        price:35,
+        description:{bool:false,txt:"White Horse is a blended whisky, as opposed to the single malt style. White Horse is particularly noted for its use of the Lagavulin."},
+        category:"beverage",
+        image:"./images/products/beverage/white_horse.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Glenfiddich 12 Years Old",
+        price:43,
+        description:{bool:false,txt:"This classic Speyside from Glenfiddich was the Winner of a Gold Medal at the 2007 International Wine and Spirit Competition, aged for 12 years in American and European Oak casks."},
+        category:"beverage",
+        image:"./images/products/beverage/glenfiddich_12.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Jameson Black Barrel",
+        price:70,
+        description:{bool:false,txt:"Ireland- Matured in a combination of American oak, sherry casks, and double charred bourbon barrels, Jameson Black Barrel is a blend of small batch grain and traditional Irish pot still whiskeys."},
+        category:"beverage",
+        image:"./images/products/beverage/jameson_black.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Dom Perignon 2008",
+        price:70,
+        description:{bool:false,txt:"Dom Perignon 2008 Lenny Kravitz Limited Edition Champagne 75cl displays Kravitz' reimagination of the iconic bottle and label with hammered metal across the classic Dom Perignon shield label. "},
+        category:"beverage",
+        image:"./images/products/beverage/drink1.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"Patrón Burdeos Anejo Tequila 70cl",
+        price:70,
+        description:{bool:false,txt:"Gran Patron Burdeos Anejo Tequila is distilled at 55 percent alcohol volume from the finest blue Agave grown in the highlands of Jalisco, Mexico.  "},
+        category:"beverage",
+        image:"./images/products/beverage/drink2jpg.jpg"
+    },
+    {
+        tags: "forwomen, beverage, birthday, newyear",
+        name:"George T. Stagg Bourbon Whiskey 2014 75cl",
+        price:70,
+        description:{bool:false,txt:"This extremely hearty whiskey ages in new charred oak barrels for no less than 15 years. It comes from straight out of the barrel, uncut and unfiltered.   "},
+        category:"beverage",
+        image:"./images/products/beverage/drink2.jpg"
+    },
+]
+
+export const cakesList = [
+    {
+         
+        image:"./images/products/cakes/cake1.jpg",
+        name:" Black Forest Cake ",
+        price:29,
+        description:{bool:false,txt:"Glass Cake Plate with Agapitos Black Forest Cake (8-10 portions) A sweet and sour addiction with chocolate, fresh cream and black cherries ! "},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake2.jpg",
+        name:" Decorated Chocolate Cake ",
+        price:29,
+        description:{bool:false,txt:"Glass Cake Plate with Agapitos Black Forest Cake (8-10 portions) A sweet and sour addiction with chocolate, fresh cream and black cherries ! "},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake3.jpg",
+        name:"Oreo & Nutella Cake",
+        price:29,
+        description:{bool:false,txt:"Vanilla Sponge, Oreo Biscuit, Nutella, Chocolate sponge,egg,oil,butter,darkchocolate ,chocolate clates dark whipping cream,gelatin"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake4.jpg",
+        name:"Chocolate Mango Cake",
+        price:29,
+        description:{bool:false,txt:"chocolate premix ,egg,oil,chocolate calets, gelatin,vanilla sponge,cream cheese,sugar icing puree mango,butter,fresh redcurrent,blueberry fresh,dark chocolate"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake5.jpg",
+        name:"Lemon Pralinosa Cake",
+        price:29,
+        description:{bool:false,txt:"Sweet paste,hazelnut cocoa cream,almond cream,cream lemon,egg,caster sugar,chocolate compund dark,raspberry,redcurrent,blueberry,strawberry"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake6.jpg",
+        name:"Lotus Cheese Cake",
+        price:29,
+        description:{bool:false,txt:"vanilla mousse,egg,oil,gelatin,cream cheese,sugar icing,lotus biscuit,butter,mariegold biscuit,dark chocolate"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake7.jpg",
+        name:"Cherry & Nutella Cake",
+        price:29,
+        description:{bool:false,txt:"Chocolate sponge, egg,oil,chocolate calets,nutella spread,butter,cream cheese,icing sugar,whippiong cream,cherry"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake8.jpg",
+        name:"Tiramsu Cake",
+        price:29,
+        description:{bool:false,txt:"Vanilla sponge, mascarapone cheese,Sugar Icing,Cocoa powder,Coffee powder,whipping cream,strawberry fresh,cold glaze,blueberry"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake9.jpg",
+        name:"Honey and Saffron Cake",
+        price:29,
+        description:{bool:false,txt:"Honey cake premix, egg,oil,cream cheese,whipping cream,icing sugar,honey,white chocolate calets,gelatin,saffron syrup,dark chocolate, Physalis"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+    {
+         
+        image:"./images/products/cakes/cake10.jpg",
+        name:"Red Velvet Cake",
+        price:29,
+        description:{bool:false,txt:"Red velvet sponge,egg ,oil,cream cheese ,whipping cream,icing sugar ,white chocolate compund,raspberry,blueberry"},
+        category:"cakes",
+        tags: "forwomen, cakes, birthday, newyear, valentine,cakes"
+    },
+]
+
+export const balloonsList = [
+    {
+         
+        image:"./images/products/balloons/balloons2.jpg",
+        name:"Red Velvet Cake",
+        price:29,
+        description:{bool:false,txt:"These clear, ‘On Your Christening’ printed balloons are beautiful, understated and perfect for potential little boys or little girls!!"},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+    {
+         
+        image:"./images/products/balloons/balloons3.jpg",
+        name:"KIDS AGE BALLOON BOUQUET",
+        price:29,
+        description:{bool:false,txt:"Build your own, helium-filled, 3-balloon bouquet to incorporate an age balloon"},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+    {
+         
+        image:"./images/products/balloons/balloons4.jpg",
+        name:"TURQUOISE & SILVER",
+        price:29,
+        description:{bool:false,txt:"Our balloon bouquets are helium filled and finished with coordinating ribbon and Think Bubble’s own branded box weight in a colour to match. "},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+    {
+         
+        image:"./images/products/balloons/balloons5.jpg",
+        name:"TURQUOISE & SILVER",
+        price:29,
+        description:{bool:false,txt:"Our balloon bouquets are helium filled and finished with coordinating ribbon and Think Bubble’s own branded box weight in a colour to match. "},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+    {
+         
+        image:"./images/products/balloons/balloons6.jpg",
+        name:"BABY PINK & BLACK",
+        price:29,
+        description:{bool:false,txt:"Our balloon bouquets are helium filled and finished with coordinating ribbon and Think Bubble’s own branded box weight in a colour to match. "},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+    {
+         
+        image:"./images/products/balloons/balloons7.jpg",
+        name:"CORAL, PINK & IVORY",
+        price:29,
+        description:{bool:false,txt:"Our balloon bouquets are helium filled and finished with coordinating ribbon and Think Bubble’s own branded box weight in a colour to match. "},
+        category:"balloons",
+        tags: "forwomen, teddybear, birthday, newyear, valentine,balloons"
+    },
+]
+
+export const hampersList = [
+    {
+        image:"./images/products/hampers/hampers1.webp",
+        name:"Bucket of Beer Gift",
+        price:34,
+        description:{bool:false,txt:"A selection of British ale and bitter with a selection of savoury snacks."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers2.webp",
+        name:"Red Wine Celebration",
+        price:38,
+        description:{bool:false,txt:"A black gift box full of savoury snacks with a 75cl bottle of Square Ranch Malbec."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers3.webp",
+        name:"Orchard Delights",
+        price:49,
+        description:{bool:false,txt:"An exquisite selection of both sweet and savoury snacks in a wooden basket"},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers4.webp",
+        name:"The Alderley",
+        price:56,
+        description:{bool:false,txt:"A mouth-watering selection of gourmet foods ideal to share with all the family."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers5.webp",
+        name:"The Sevenoaks",
+        price:75,
+        description:{bool:false,txt:"A lidded wicker basket filled with wines and a selection of sweet and savoury treats."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers6.webp",
+        name:"The Marlow",
+        price:57,
+        description:{bool:false,txt:"A satisfying array of tasty gourmet treats packed in a Grey Tote Bag."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+    {
+        image:"./images/products/hampers/hampers7.webp",
+        name:"The Mayfair",
+        price:88,
+        description:{bool:false,txt:"With a variety of tasty contents this hamper is perfect for sharing with the whole family."},
+        category:"hampers",
+        tags: "forwomen, birthday, newyear, valentine,hampers"
+    },
+   
 ]

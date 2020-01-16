@@ -23,13 +23,15 @@
 .HeaderSearchInput{
     /* width: calc(100% - 40px); */
     width: calc(100% - 2.928vw);
-    padding: 0 0 0 2%;
+    padding: 0 0 0 4%;
     border: transparent;
     /* border-top-left-radius: 4px;
     border-bottom-left-radius: 4px; */
     border-top-left-radius: 0.2928vw;
     border-bottom-left-radius: 0.2928vw;
     outline: none;
+    font-size: 1.1vw;
+    color: #041e42cc;
 }
 .HeaderSearchButton{
     /* width: 40px; */
@@ -44,7 +46,7 @@
     background: transparent;
     outline: none;
 }
-.HeaderSearchButton > .fa-search{
+.headerMainSearchSize{
     border: transparent;
     /* font-size: 18px; */
     font-size: 1.3177vw;

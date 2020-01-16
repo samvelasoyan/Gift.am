@@ -1,5 +1,5 @@
 import { DESCRIPTION, CATEGORY, TOCART, TOLIST } from "../Constants";
-import { perfume, watches, flowers } from "../productCreator";
+import { perfume, watches, flowers, cakes, balloons, teddybear, beverage, jewelry, hampers } from "../productCreator";
 
 const ACTION_HANDLERS = {
     [DESCRIPTION]: (state, action) => {
@@ -17,7 +17,7 @@ const ACTION_HANDLERS = {
 };
 
 const initState = {
-    products: {perfume, watches, flowers},
+    products: {perfume, watches, flowers, cakes, balloons, teddybear, beverage,jewelry, hampers},
     list: [],
     cart: [],
     total: 0,

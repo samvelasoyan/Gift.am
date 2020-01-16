@@ -1,33 +1,3 @@
-.CartMenuMain{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background: rgba(0,0,0,.3);
-    opacity: 0.2;
-}
-.CartMenu{
-    width: 25%;
-    height: 100%;
-    padding: 2%;
-    position: fixed;
-    /* position: absolute; */
-    top: 0;
-    right: 0;
-    z-index: 3;
-    background: white;
-    opacity: 1;
-    animation-name: CartMenu;
-    animation-duration: 0.3s;
-    transition: 0.3s;
-}
-@keyframes CartMenu{
-    from{right:-25%}
-    to{right: 0;}
-}
-
-/* CartMenuContent styles */
-
 .CartMenuContent{
     display: flex;
     flex-direction: column;
@@ -101,46 +71,9 @@
     border-radius: 0.2928vw;
 }
 
-.total{
-    color: #041e42;
-    font-size: 1.5vw;
-}
-
 .CartUserContent{
-    height: inherit;
+    height: calc(100% - 5.856vw);
     overflow: auto;
     width: 100%;
     padding: 2%;
-}
-
-.name{
-    display: flex;
-    color: #041e42;
-}
-
-.cart-buttons{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.minus, .plus, .times, .quantity{
-    padding: 5%;
-    text-align: center;
-    background-color: #fff;
-    color: #041e42;
-    cursor: pointer;
-    transition: 200ms;
-    border-bottom: 1px solid transparent;
-    font-size: 1vw;
-}
-
-.quantity{
-    margin-top: -0.2vw;
-    font-size: 1.5vw;
-}
-
-.times{
-    position: absolute;
-    right: 0;
-    top: 0;
 }

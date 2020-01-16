@@ -1,16 +1,13 @@
-import React,{Component,Fragment} from 'react';
+import React,{Fragment} from 'react';
 import ListProd from '../Products/ListProd';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { descriptionAction } from "../../actions/productsActions";
 
-class WishListMenu extends Component{
-    render(){
-        const { list } = this.props.categories
+function WishListMenu (props){
+        const { list } = props.categories
         return(
             <Fragment>
-            <div className='WishListMenuMain'></div>
-            <div className='WishListMenu' style={{right:`${this.props.right}`}}>
                 <div className='WishListMenuContent'>
                     <div className='WishListMenuHeader'>
                         <div className='WishListMenuName'>
@@ -19,7 +16,7 @@ class WishListMenu extends Component{
                             </div>
                             <div className='WishListMenuNameAcc'>Wish List</div>
                         </div>
-                        <div className='WishListMenuClose' onClick={this.props.closeWishListMenu}>
+                        <div className='WishListMenuClose' onClick={props.closeUMenuRight}>
                             <i className="fas fa-times"></i>
                         </div>
                     </div>
@@ -27,10 +24,8 @@ class WishListMenu extends Component{
                 <div className='WishListUserContent'>
                     {list.map((item, index) => <ListProd {...item} key={index} />)}
                 </div>
-            </div>
             </Fragment>
         )
-    }
 }
 
 export default connect(

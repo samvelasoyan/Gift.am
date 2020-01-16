@@ -20,7 +20,7 @@ function Footer({ searchAction, loop }) {
             <div className="footer-left">
                 <h1>Gift.am</h1>
             </div>
-            <div className="footer-centre">
+            <div id="footer-centre">
                 <div>
                     <h3>about us</h3>
                     <p>delivery and payment</p>
@@ -28,7 +28,7 @@ function Footer({ searchAction, loop }) {
                     <p>contact us</p>
                 </div>
                 <Link to="/search">
-                    <div onClick={searchByTag}>
+                    <div onClick={searchByTag} className="spanol">
                         <h3>tags</h3>
                         <span>#forWomen,</span>
                         <span>#forMen,</span>

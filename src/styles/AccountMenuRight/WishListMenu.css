@@ -1,33 +1,3 @@
-.WishListMenuMain{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background: rgba(0,0,0,.3);
-    opacity: 0.2;
-}
-.WishListMenu{
-    width: 25%;
-    height: 100%;
-    padding: 2%;
-    position: fixed;
-    /* position: absolute; */
-    top: 0;
-    right: 0;
-    z-index: 3;
-    background: white;
-    opacity: 1;
-    animation-name: WishListMenu;
-    animation-duration: 0.3s;
-    transition: 0.3s;
-}
-@keyframes WishListMenu{
-    from{right:-25%}
-    to{right: 0;}
-}
-
-/* WishListMenuContent styles */
-
 .WishListMenuContent{
     display: flex;
     flex-direction: column;
@@ -101,37 +71,9 @@
     border-radius: 0.2928vw;
 }
 .WishListUserContent{
-    height: inherit;
+    height: calc(100% - 5.856vw);
     overflow: auto;
     width: 100%;
     padding: 2%;
 }
-.cart-product-box{
-    width: 100%;
-    padding: 5%;
-    margin-bottom: 2%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    border: 1px solid #999999;
-}
-.cart-prod-image{
-    width: 30%;
-    padding-bottom: 30%;
-    background-size: contain;
-}
-.cart-prod-description{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-}
 
-.add{
-    font-size: 1.2vw;
-}
-.bttm{
-    height: 3%;
-}
-.cart-product-box:hover>.bttm{
-    left: 0%;
-}

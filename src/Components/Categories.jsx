@@ -23,7 +23,7 @@ export default function Categories() {
                 <Box background={jewelryBG} text="jewelry" />
                 <Box background={watchesBG} text="watches" />
                 <Box background={flowersBG} text="flowers" />
-                <Box background={teddybearBG} text="teddy bear" />
+                <Box background={teddybearBG} text="teddybear" />
                 <Box background={beverageBG} text="beverage" />
                 <Box background={cakeBG} text="cakes" />
                 <Box background={basketBG} text="hampers" />

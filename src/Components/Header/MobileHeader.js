@@ -14,14 +14,14 @@ class MobileHeader extends Component{
                 <div className='MobileH MobileSearch'>
                     <i className="fas fa-search"></i>
                 </div>
-                <div className="MobileH MobileUser" onClick={this.props.openAccountMenu}>
+                <div className="MobileH MobileUser" onClick={()=>this.props.UMenuRighContent('user')}>
                     <i className="fas fa-user"></i>
                 </div>
-                <div className="MobileH MobileWishList">
+                <div className="MobileH MobileWishList" onClick={()=>this.props.UMenuRighContent('wishList')}>
                     <i className="fas fa-heart"></i>
                 </div>
                 <div className="MobileH MobileCart">
-                    <i className="fas fa-shopping-cart"></i>
+                    <i className="fas fa-shopping-cart" onClick={()=>this.props.UMenuRighContent('cart')}></i>
                 </div>
                 <div className='MobileH MobileMenuHeader' onClick={this.props.openMobileMenu}>
                     <i className="fas fa-bars"></i>

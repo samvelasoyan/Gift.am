@@ -3,15 +3,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { setCategoryAction } from "./actions/routingActions";
-import { getUserAction } from "./actions/loginRegisterActions";
+import { getUserAction } from './actions/loginRegisterActions';
 import Home from "./Home";
 import Category from "./Category";
 import Search from "./Search";
 import Error from "./Error";
+import Buy from './Components/buy/buy';
 
 class App extends Component {
-    componentDidMount() {
-        this.props.getUserAction();
+
+    componentDidMount(){
+        this.props.getUserAction()
     }
 
     render() {
@@ -25,20 +27,13 @@ class App extends Component {
                             <Route path="/" exact component={Home} />
                             <Route path={`/categories/${category}`} component={Category} />
                             <Route path={`/search`} component={Search} />
+                            <Route path={'/BuyNow'} component={Buy}/>
                         </Switch>
                     </Router>
                 </div>
                 {error ? <Error /> : null}
                 {loader&& <div className='loader'>
-                    <div className="spinner-grow text-light" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
-                    <div className="spinner-grow text-light" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
-                    <div className="spinner-grow text-light" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </div>
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
                 </div>}
             </Fragment>
         );

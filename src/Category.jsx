@@ -4,9 +4,6 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer";
 import Prod from "./Components/Products/Prod";
 import ProdPopUp from "./Components/Products/ProdPopUp";
-import AccountMenu from "./Components/AccountMenuRight/AccountMenu";
-import WishListMenu from "./Components/AccountMenuRight/WishListMenu";
-import CartMenu from './Components/AccountMenuRight/CartMenu';
 import MobileMenu from "./Components/MobileMenu/MobileMenu";
 import Registration from "./Components/Registration";
 import "./styles/category.css";
@@ -15,56 +12,40 @@ import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { descriptionAction } from "./actions/productsActions";
-import { setCategoryAction } from "./actions/routingActions";
 import { popUpAction } from "./actions/loginRegisterActions";
+import { setCategoryAction } from "./actions/routingActions";
+import UMenuRight from "./Components/AccountMenuRight/UMenuRight";
 
 class Category extends Component {
     state = {
         popUp: false,
         HeaderBool: true,
-        AccountMenuBool: false,
-        AccountMenuPositionRight: "0",
-        WishListMenuBool: false,
-        WishListMenuPositionRight: "0",
-        CartMenuBool: false,
-        CartMenuPositionRight: "0",
+        UMenuRightBool:false,
+        UMenuRightPositionRight:'0',
+        UMenuRighContent:null,
         MobileMenuBool: false,
         MobileMenuPositionRight: "0"
     };
-
-    openAccountMenu = () => {
-        this.setState({ AccountMenuBool: !this.state.AccountMenuBool });
-    };
-    closeAccountMenu = () => {
-        this.setState({ AccountMenuPositionRight: "-25%" });
+    openUMenuRight = () => {
+        document.querySelector('body').style.overflow = 'hidden'
+        this.setState({UMenuRightBool:!this.state.UMenuRightBool})
+      }
+    
+      closeUMenuRight = () =>{
+        this.setState({UMenuRightPositionRight:'-25%'},)
         setTimeout(() => {
-            this.setState({
-                AccountMenuBool: !this.state.AccountMenuBool,
-                AccountMenuPositionRight: "0"
-            });
+          this.setState({UMenuRightBool:!this.state.UMenuRightBool,UMenuRightPositionRight:'0'})
+          document.querySelector('body').style.overflow = 'auto'
         }, 300);
-    };
-    openWishListMenu = () => {
-        this.setState({ WishListMenuBool: !this.state.WishListMenuBool });
-    };
-    closeWishListMenu = () => {
-        this.setState({ WishListMenuPositionRight: "-25%" });
-        setTimeout(() => {
-            this.setState({
-                WishListMenuBool: !this.state.WishListMenuBool,
-                WishListMenuPositionRight: "0"
-            });
-        }, 300);
-    };
-    openCartMenu = () => {
-        this.setState({ CartMenuBool: !this.state.CartMenuBool });
-    };
-    closeCartMenu = () => {
-        this.setState({ CartMenuPositionRight: "-25%" });
-        setTimeout(() => {
-            this.setState({ CartMenuBool: !this.state.CartMenuBool, CartMenuPositionRight: "0" });
-        }, 300);
-    };
+      }
+    
+      UMenuRighContent = (str) =>{
+        if(str === 'user'){this.setState({UMenuRighContent:'user'})}
+        else if(str === 'wishList'){this.setState({UMenuRighContent:'wishList'})}
+        else{this.setState({UMenuRighContent:'cart'})}
+        this.openUMenuRight()
+      }
+      
     openMobileMenu = () => {
         this.setState({ MobileMenuBool: !this.state.MobileMenuBool });
     };
@@ -104,17 +85,13 @@ class Category extends Component {
             this.setState({ pages });
         }
     };
+
     render() {
         const { pages } = this.state;
         return (
             <Fragment>
                 <div className={`main-page ${this.state.popUp ? "blured" : null}`}>
-                    <Header
-                        openAccountMenu={this.openAccountMenu}
-                        openMobileMenu={this.openMobileMenu}
-                        openWishListMenu={this.openWishListMenu}
-                        openCartMenu={this.openCartMenu}
-                    />
+                    <Header openMobileMenu={this.openMobileMenu} UMenuRighContent={this.UMenuRighContent}/>
                     <div id="Slider">
                         <Slider
                             speed={500}
@@ -162,22 +139,11 @@ class Category extends Component {
                         right={this.state.MobileMenuPositionRight}
                     />
                 )}
-                {this.state.AccountMenuBool && (
-                    <AccountMenu
-                        closeAccountMenu={this.closeAccountMenu}
-                        right={this.state.AccountMenuPositionRight}
-                    />
-                )}
-                {this.state.WishListMenuBool && (
-                    <WishListMenu
-                        closeWishListMenu={this.closeWishListMenu}
-                        right={this.state.WishListMenuPositionRight}
-                    />
-                )}
-                {this.state.CartMenuBool && (
-                    <CartMenu
-                        closeCartMenu={this.closeCartMenu}
-                        right={this.state.CartMenuPositionRight}
+                {this.state.UMenuRightBool && (
+                    <UMenuRight
+                        closeUMenuRight={this.closeUMenuRight}
+                        right={this.state.UMenuRightPositionRight}
+                        UMenuRighContent={this.state.UMenuRighContent}
                     />
                 )}
 
@@ -192,6 +158,6 @@ export default connect(
         return { categories: state.categories, data: state.getData };
     },
     (dispatch) => {
-        return bindActionCreators({ descriptionAction, popUpAction, setCategoryAction }, dispatch);
+        return bindActionCreators({ descriptionAction, popUpAction,setCategoryAction }, dispatch);
     }
 )(Category);

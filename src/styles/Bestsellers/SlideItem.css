@@ -1,0 +1,46 @@
+.slideItemImage{
+    width: 80%;
+    height: 11.52vw;
+    margin-left: 10%;
+    margin-top: 1.152vw;
+}
+.slideItemName{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    font-size: 1.2vw;
+    color: #041e42;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.slideItemPriceHearCart{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.slideItemPrice{
+    font-weight: bold;
+    color: #041e42;
+    font-size: 1.2vw;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.slideItemHeart,.slideItemCart{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.slideItemHeart > i,.slideItemCart > i{
+    font-size: 1.2vw;
+    color: #041e42;
+}
+.slideItemHeart > i{
+    color: #e63042;
+}
+.slideItemHeart:hover > i,.slideItemCart:hover > i{
+    transform: scale(1.3);
+}

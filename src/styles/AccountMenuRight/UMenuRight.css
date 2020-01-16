@@ -1,0 +1,74 @@
+@import "./AccountMenu.css";
+@import "./WishListMenu.css";
+@import "./CartMenu.css";
+
+.UMenuRightMain{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.3);
+    opacity: 0.2;
+}
+.UMenuRight{
+    width: 25%;
+    height: 100%;
+    padding: 2%;
+    position: fixed;
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background: white;
+    opacity: 1;
+    animation-name: UMenuRight;
+    animation-duration: 0.3s;
+    transition: 0.3s;
+    text-align: center;
+}
+@keyframes UMenuRight{
+    from{right:-25%}
+    to{right: 0;}
+}
+
+
+
+.cart-product-box{
+    width: 100%;
+    padding: 5%;
+    margin-bottom: 2%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid #999999;
+}
+.cart-prod-image{
+    width: 30%;
+    padding-bottom: 30%;
+}
+.cart-prod-description{
+    width: 60%;
+    position: relative;
+}
+.add{
+    font-size: 1vw;
+}
+.bttm{
+    height: 3%;
+}
+.cart-product-box:hover >.bttm{
+    left: 0%;
+}
+.cart-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cart-buttons > .minus,.plus{
+    cursor: pointer;
+}
+.cart-prod-description > .times{
+    position: absolute;
+    top: -5%;
+    right: -20%;
+    cursor: pointer;
+}

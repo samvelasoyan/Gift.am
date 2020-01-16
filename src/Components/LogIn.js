@@ -19,8 +19,10 @@ class LogIn extends Component {
         setTimeout(() => this.props.logInAction(), 600);
     };
     handleSubmit = (e) => {
-        e.preventDefault()
-        this.props.logIn(this.state)
+        // e.preventDefault()
+        this.props.logIn(this.state);
+        window.location.reload()
+
     };
     render() {
         const { Email, password } = this.state;

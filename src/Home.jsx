@@ -1,57 +1,25 @@
 import React,{Component} from 'react';
 import Header from './Components/Header/Header';
 import Slidebar from './Components/Slidebar/slidebar';
-import AccountMenu from './Components/AccountMenuRight/AccountMenu';
-import WishListMenu from './Components/AccountMenuRight/WishListMenu';
-import CartMenu from './Components/AccountMenuRight/CartMenu';
 import MobileMenu from './Components/MobileMenu/MobileMenu';
 import Registration from './Components/Registration';
 import Categories from './Components/Categories';
+import Bestsellers from './Components/Bestsellers/BestsellersSlide';
 import Footer from './Components/Footer'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { popUpAction } from "./actions/loginRegisterActions";
 // import resize from './resize';
+import UMenuRight from './Components/AccountMenuRight/UMenuRight';
 
 class Home extends Component {
   state = {
     HeaderBool:true,
-    AccountMenuBool:false,
-    AccountMenuPositionRight:'0',
-    WishListMenuBool:false,
-    WishListMenuPositionRight:'0',
-    CartMenuBool:false,
-    CartMenuPositionRight:'0',
     MobileMenuBool:false,
     MobileMenuPositionRight:'0',
-  }
-  
-  openAccountMenu = () => {
-    this.setState({AccountMenuBool:!this.state.AccountMenuBool})
-  }
-  closeAccountMenu = () =>{
-    this.setState({AccountMenuPositionRight:'-25%'},)
-    setTimeout(() => {
-      this.setState({AccountMenuBool:!this.state.AccountMenuBool,AccountMenuPositionRight:'0'})
-    }, 300);
-  }
-  openWishListMenu = () => {
-    this.setState({WishListMenuBool:!this.state.WishListMenuBool})
-  }
-  closeWishListMenu = () =>{
-    this.setState({WishListMenuPositionRight:'-25%'},)
-    setTimeout(() => {
-      this.setState({WishListMenuBool:!this.state.WishListMenuBool,WishListMenuPositionRight:'0'})
-    }, 300);
-  }
-  openCartMenu = () => {
-    this.setState({CartMenuBool:!this.state.CartMenuBool})
-  }
-  closeCartMenu = () =>{
-    this.setState({CartMenuPositionRight:'-25%'},)
-    setTimeout(() => {
-      this.setState({CartMenuBool:!this.state.CartMenuBool,CartMenuPositionRight:'0'})
-    }, 300);
+    UMenuRightBool:false,
+    UMenuRightPositionRight:'0',
+    UMenuRighContent:null
   }
   openMobileMenu = () => {
     this.setState({MobileMenuBool:!this.state.MobileMenuBool})
@@ -62,32 +30,47 @@ class Home extends Component {
       this.setState({MobileMenuBool:!this.state.MobileMenuBool,MobileMenuPositionRight:'0'})
     }, 300);
   }
+
+  openUMenuRight = () => {
+    document.querySelector('body').style.overflow = 'hidden'
+    this.setState({UMenuRightBool:!this.state.UMenuRightBool})
+  }
+
+  closeUMenuRight = () =>{
+    this.setState({UMenuRightPositionRight:'-25%'},)
+    setTimeout(() => {
+      this.setState({UMenuRightBool:!this.state.UMenuRightBool,UMenuRightPositionRight:'0'})
+      document.querySelector('body').style.overflow = 'auto'
+    }, 300);
+  }
+
+  UMenuRighContent = (str) =>{
+    if(str === 'user'){this.setState({UMenuRighContent:'user'})}
+    else if(str === 'wishList'){this.setState({UMenuRighContent:'wishList'})}
+    else{this.setState({UMenuRighContent:'cart'})}
+    this.openUMenuRight()
+  }
+
   // componentDidMount(){
   //   resize()
   // }
   
   render(){
-    const forblur = this.state.AccountMenuBool ? 'blured' : ''
+    const forblur = this.state.UMenuRightBool ? 'blured' : ''
     return (
         <div className="App">
           <div className={forblur}>
             {
               this.state.HeaderBool && 
-              <Header 
-                openAccountMenu={this.openAccountMenu} 
-                openMobileMenu={this.openMobileMenu}
-                openWishListMenu={this.openWishListMenu}
-                openCartMenu={this.openCartMenu}
-              />
+              <Header openMobileMenu={this.openMobileMenu} UMenuRighContent={this.UMenuRighContent}/>
             }
               <Slidebar />
               <Categories/>
+              <Bestsellers/>
               <Footer/>
           </div>
           {this.state.MobileMenuBool && <MobileMenu closeMobileMenu={this.closeMobileMenu} right={this.state.MobileMenuPositionRight}/>}
-          {this.state.AccountMenuBool && <AccountMenu closeAccountMenu={this.closeAccountMenu} right={this.state.AccountMenuPositionRight}/>}
-          {this.state.WishListMenuBool && <WishListMenu closeWishListMenu={this.closeWishListMenu} right={this.state.WishListMenuPositionRight}/>}
-          {this.state.CartMenuBool && <CartMenu closeCartMenu={this.closeCartMenu} right={this.state.CartMenuPositionRight}/>}
+          {this.state.UMenuRightBool && <UMenuRight UMenuRighContent={this.state.UMenuRighContent} closeUMenuRight={this.closeUMenuRight} right={this.state.UMenuRightPositionRight}/>}
           {this.props.data.template ? <Registration /> : null}
         </div>
     );

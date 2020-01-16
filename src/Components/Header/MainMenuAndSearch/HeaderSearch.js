@@ -22,7 +22,7 @@ function HeaderSearch ({searchAction, loop}){
                 <input type='search' className='HeaderSearchInput' onChange={handleChange} value={value}></input>
                 <button className='HeaderSearchButton' >
                     <Link to={`/search`} ref={buttonRef}>
-                        <i className="fas fa-search"></i>
+                        <i className="fas fa-search headerMainSearchSize"></i>
                     </Link>
                 </button>
             </form>

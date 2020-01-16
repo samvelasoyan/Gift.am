@@ -25,23 +25,20 @@ class Header extends Component{
 
     render(){
         window.onresize = this.mobileMenu
+        // console.log(this.props.UMenuRighContent)
         return(
             <header className='header' id='home'>
                 {
                     this.state.width < 720 ? 
                     <MobileHeader 
                         openMobileMenu={this.props.openMobileMenu}
-                        openAccountMenu={this.props.openAccountMenu} 
+                        UMenuRighContent={this.props.UMenuRighContent}
                         />
                     :
                     <Fragment>
                         <Logo/>
                         <MainMenuAndSearch loop={this.props.loop}/>
-                        <Account 
-                            openAccountMenu={this.props.openAccountMenu} 
-                            openWishListMenu={this.props.openWishListMenu}
-                            openCartMenu={this.props.openCartMenu}
-                            />
+                        <Account UMenuRighContent={this.props.UMenuRighContent}/>
                     </Fragment>
                 }
             </header>

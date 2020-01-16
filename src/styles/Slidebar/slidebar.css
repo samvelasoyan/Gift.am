@@ -7,7 +7,7 @@
     overflow: hidden;
     background: rgba(234, 237, 237,0.2);
   }
-  .fa-chevron-right,.fa-chevron-left{
+  .rightbtn > .fa-chevron-right,.leftbtn >  .fa-chevron-left{
     position: absolute;
     /* width: 40px;
     height: 40px; */
