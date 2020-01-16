@@ -1,3 +1,3 @@
 # Gift.am
 
-![](./preview.mp4)
+![](./preview.gif)
